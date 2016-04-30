@@ -8,8 +8,35 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+    
+    NSMutableArray * buttons;
+    NSMutableArray * buttonVelocities;
+    NSMutableArray * buttonLocations;
 
+    //used for physics engine
+    UIDynamicAnimator* _animator;
+    UICollisionBehavior* _collision;
+
+    
+    
+    IBOutlet UIScreenEdgePanGestureRecognizer *pauseGuesture;
+    IBOutlet UILabel * scoreLabel;
+    IBOutlet UILabel * timeLabel;
+    int time;
+    NSTimer * moveTimer;
+    NSTimer * countdownTimer;
+    int score;
+    int numb_bubbles;
+    UIColor *previous_color;
+}
+-(IBAction)pause:(id)sender;
+-(BOOL)isButtonOverlapping:(NSArray *)array button:(UIButton *)btn; 
+- (UIButton *)createNewButton;
+- (void)timerTick;
+- (void)changeBubbleColor; 
+- (void)countdownTick;
+- (IBAction)buttonClick:(id)sender;
 
 @end
 

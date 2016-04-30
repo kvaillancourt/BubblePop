@@ -16,6 +16,10 @@
 		4800CC241CC47BF4002BEBBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4800CC221CC47BF4002BEBBE /* LaunchScreen.storyboard */; };
 		4800CC2F1CC47BF4002BEBBE /* Tutorial1_gameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4800CC2E1CC47BF4002BEBBE /* Tutorial1_gameTests.m */; };
 		4800CC3A1CC47BF4002BEBBE /* Tutorial1_gameUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4800CC391CC47BF4002BEBBE /* Tutorial1_gameUITests.m */; };
+		4800CC4B1CC4A32F002BEBBE /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 4800CC4A1CC4A32F002BEBBE /* bubble.png */; };
+		4800CC4D1CC4A465002BEBBE /* splat.png in Resources */ = {isa = PBXBuildFile; fileRef = 4800CC4C1CC4A465002BEBBE /* splat.png */; };
+		481401A31CC73A0F00F7671A /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481401A21CC73A0F00F7671A /* WelcomeViewController.m */; };
+		481401A61CC742EE00F7671A /* ScoreboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481401A51CC742EE00F7671A /* ScoreboardViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,12 @@
 		4800CC351CC47BF4002BEBBE /* Tutorial1_gameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tutorial1_gameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4800CC391CC47BF4002BEBBE /* Tutorial1_gameUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tutorial1_gameUITests.m; sourceTree = "<group>"; };
 		4800CC3B1CC47BF4002BEBBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4800CC4A1CC4A32F002BEBBE /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
+		4800CC4C1CC4A465002BEBBE /* splat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splat.png; sourceTree = "<group>"; };
+		481401A11CC73A0F00F7671A /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		481401A21CC73A0F00F7671A /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		481401A41CC742EE00F7671A /* ScoreboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreboardViewController.h; sourceTree = "<group>"; };
+		481401A51CC742EE00F7671A /* ScoreboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreboardViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				4800CC101CC47BF3002BEBBE /* Tutorial1_game */,
-				4800CC2D1CC47BF4002BEBBE /* Tutorial1_gameTests */,
 				4800CC381CC47BF4002BEBBE /* Tutorial1_gameUITests */,
+				4800CC2D1CC47BF4002BEBBE /* Tutorial1_gameTests */,
 				4800CC0F1CC47BF3002BEBBE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,6 +118,10 @@
 				4800CC171CC47BF4002BEBBE /* ViewController.h */,
 				4800CC181CC47BF4002BEBBE /* ViewController.m */,
 				4800CC1A1CC47BF4002BEBBE /* Main.storyboard */,
+				481401A41CC742EE00F7671A /* ScoreboardViewController.h */,
+				481401A51CC742EE00F7671A /* ScoreboardViewController.m */,
+				481401A11CC73A0F00F7671A /* WelcomeViewController.h */,
+				481401A21CC73A0F00F7671A /* WelcomeViewController.m */,
 				4800CC201CC47BF4002BEBBE /* Assets.xcassets */,
 				4800CC221CC47BF4002BEBBE /* LaunchScreen.storyboard */,
 				4800CC251CC47BF4002BEBBE /* Info.plist */,
@@ -120,6 +134,8 @@
 		4800CC111CC47BF3002BEBBE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4800CC4C1CC4A465002BEBBE /* splat.png */,
+				4800CC4A1CC4A32F002BEBBE /* bubble.png */,
 				4800CC121CC47BF3002BEBBE /* main.m */,
 			);
 			name = "Supporting Files";
@@ -210,6 +226,7 @@
 				TargetAttributes = {
 					4800CC0D1CC47BF3002BEBBE = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 2S3D8J8M3T;
 					};
 					4800CC291CC47BF4002BEBBE = {
 						CreatedOnToolsVersion = 7.3;
@@ -247,6 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4800CC241CC47BF4002BEBBE /* LaunchScreen.storyboard in Resources */,
+				4800CC4B1CC4A32F002BEBBE /* bubble.png in Resources */,
+				4800CC4D1CC4A465002BEBBE /* splat.png in Resources */,
 				4800CC211CC47BF4002BEBBE /* Assets.xcassets in Resources */,
 				4800CC1C1CC47BF4002BEBBE /* Main.storyboard in Resources */,
 			);
@@ -273,6 +292,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				481401A61CC742EE00F7671A /* ScoreboardViewController.m in Sources */,
+				481401A31CC73A0F00F7671A /* WelcomeViewController.m in Sources */,
 				4800CC191CC47BF4002BEBBE /* ViewController.m in Sources */,
 				4800CC1F1CC47BF4002BEBBE /* Tutorial1_game.xcdatamodeld in Sources */,
 				4800CC161CC47BF4002BEBBE /* AppDelegate.m in Sources */,
@@ -419,10 +440,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Tutorial1_game/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.kvaillancourt.Tutorial1-game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -430,10 +454,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Tutorial1_game/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.kvaillancourt.Tutorial1-game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -502,6 +529,7 @@
 				4800CC401CC47BF4002BEBBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4800CC411CC47BF4002BEBBE /* Build configuration list for PBXNativeTarget "Tutorial1_gameTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +538,7 @@
 				4800CC431CC47BF4002BEBBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4800CC441CC47BF4002BEBBE /* Build configuration list for PBXNativeTarget "Tutorial1_gameUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +547,7 @@
 				4800CC461CC47BF4002BEBBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
