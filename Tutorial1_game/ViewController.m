@@ -20,40 +20,63 @@
     [clickMe setBackgroundImage:[UIImage imageNamed:@"bubble.png"] forState:UIControlStateNormal];
     [clickMe setBackgroundImage:[UIImage imageNamed:@"splat.png"] forState:UIControlStateHighlighted];
     
+    
+
     CGRect buttonFrame = clickMe.frame;
     int randomX = arc4random() % (int)(self.view.frame.size.width - buttonFrame.size.width);
     int randomY = arc4random() % (int)(self.view.frame.size.height - buttonFrame.size.height);
 
+
     
-    //CGRect buttonFrame = clickMe.frame;
+//    CGRect buttonFrame = clickMe.frame;
     buttonFrame.origin.x = randomX;
     buttonFrame.origin.y = randomY;
     clickMe.frame = buttonFrame;
 
     [self.view addSubview:clickMe];
-    return clickMe; 
+    
+    //physics shit
+    UIDynamicItemBehavior *ballBehavior = [[UIDynamicItemBehavior alloc] initWithItems:buttons];
+    ballBehavior.elasticity = 1;
+    ballBehavior.friction = 0;
+    ballBehavior.resistance = 0;
+    ballBehavior.allowsRotation = NO;
+    
+    [_animator addBehavior:ballBehavior];
+    
+    
+    UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[clickMe] mode:UIPushBehaviorModeInstantaneous];
+    [push setPushDirection:CGVectorMake(arc4random() % bubble_max_speed, arc4random() % bubble_max_speed)];
+    
+    [_animator addBehavior:push];
+    [push setActive:YES];
+    
+    return clickMe;
 
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    bubble_max_speed = 2.5;
     time = 60;
     buttons = [[NSMutableArray alloc] init];
     buttonVelocities = [[NSMutableArray alloc] init];
     numb_bubbles = 15;
     
+    _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+
     for (int i = 0; i < numb_bubbles; i++){
         UIButton * button = [self createNewButton];
         [buttons addObject:button];
         button.hidden = YES;
-        CGPoint vel = CGPointMake((int)(arc4random_uniform(20) - 11), (int)(arc4random_uniform(20) - 11));
-        [buttonVelocities addObject:([NSValue valueWithCGPoint:vel])];
+     //   CGPoint vel = CGPointMake((int)(arc4random_uniform(20) - 11), (int)(arc4random_uniform(20) - 11));
+       // [buttonVelocities addObject:([NSValue valueWithCGPoint:vel])];
     }
     [self changeBubbleColor];
 
     // Do any additional setup after loading the view, typically from a nib.
-    moveTimer = [NSTimer scheduledTimerWithTimeInterval:0.05
+    moveTimer = [NSTimer scheduledTimerWithTimeInterval:5
                                                  target:self
                                                selector:@selector(timerTick)
                                                userInfo:nil
@@ -66,10 +89,11 @@
                                                 repeats:YES];
     
     
-    //physics shit
-    _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+
+    
+    
     _collision = [[UICollisionBehavior alloc]initWithItems:buttons];
-    //_collision.translatesReferenceBoundsIntoBoundary = YES;
+    _collision.translatesReferenceBoundsIntoBoundary = YES;
     
     [_animator addBehavior:_collision];
 
@@ -98,6 +122,9 @@
                          {
                              [alert dismissViewControllerAnimated:YES completion:nil];
                          }];
+    
+    
+    
     
     [alert addAction:ok];
     [alert addAction:main];
@@ -160,15 +187,15 @@
         clickMe.hidden = (bool)(arc4random() % 2);
 
         
-        while ([self isButtonOverlapping:buttons button:clickMe]){
-            CGRect buttonFrame = clickMe.frame;
-            
-            buttonFrame.origin.x = arc4random() % (int)(self.view.frame.size.width - buttonFrame.size.width);
-            buttonFrame.origin.y = arc4random() % (int)(self.view.frame.size.height - buttonFrame.size.height);;
-            clickMe.frame = buttonFrame;
-
-        }
-        
+//        while ([self isButtonOverlapping:buttons button:clickMe]){
+//            CGRect buttonFrame = clickMe.frame;
+//            
+//            buttonFrame.origin.x = arc4random() % (int)(self.view.frame.size.width - buttonFrame.size.width);
+//            buttonFrame.origin.y = arc4random() % (int)(self.view.frame.size.height - buttonFrame.size.height);;
+//            clickMe.frame = buttonFrame;
+//
+//        }
+//        
         
         int colorNumber = arc4random() % 100;
         
@@ -214,27 +241,33 @@
 - (void)timerTick{
         //move the button
     for (UIButton * clickMe in buttons) {
-        //where in this array, clickMe is
-        long buttonIndex = [buttons indexOfObject:clickMe];
-        NSValue * buttonVelocityValue = [buttonVelocities objectAtIndex:buttonIndex];
-        CGPoint buttonVelocity = [buttonVelocityValue CGPointValue];
-        CGRect buttonFrame = [clickMe frame];
+        UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[clickMe] mode:UIPushBehaviorModeInstantaneous];
+        [push setPushDirection:CGVectorMake(arc4random() % 2, arc4random() % 2)];
         
-        //move down
-        buttonFrame.origin.y += buttonVelocity.y;
-        //move right
-        buttonFrame.origin.x += buttonVelocity.x;
+        [_animator addBehavior:push];
+        [push setActive:YES];
         
-        if (!clickMe.hidden && [self isButtonOverlapping:buttons button:clickMe]) {
-            buttonVelocity.y *= -1;
-            buttonVelocity.x *= -1;
-            buttonFrame.origin.y += buttonVelocity.y*2;
-            buttonFrame.origin.x += buttonVelocity.x*2;
-        }
+//        //where in this array, clickMe is
+//        long buttonIndex = [buttons indexOfObject:clickMe];
+//        NSValue * buttonVelocityValue = [buttonVelocities objectAtIndex:buttonIndex];
+//        CGPoint buttonVelocity = [buttonVelocityValue CGPointValue];
+//        CGRect buttonFrame = [clickMe frame];
+//        
+//        //move down
+//        buttonFrame.origin.y += buttonVelocity.y;
+//        //move right
+//        buttonFrame.origin.x += buttonVelocity.x;
+//        
+//        if (!clickMe.hidden && [self isButtonOverlapping:buttons button:clickMe]) {
+//            buttonVelocity.y *= -1;
+//            buttonVelocity.x *= -1;
+//            buttonFrame.origin.y += buttonVelocity.y*2;
+//            buttonFrame.origin.x += buttonVelocity.x*2;
+//        }
 
         
         
-        //this shit checks to see if it has collided with any other bubble.
+//        this shit checks to see if it has collided with any other bubble.
 //        int thatY, thatX;
 //        int thisY = buttonFrame.origin.y;
 //        int thisX = buttonFrame.origin.x;
@@ -295,26 +328,29 @@
 //            }
 //
 //        }
-//               origin is the top left hand corner
-        if (buttonFrame.origin.x < 0  || buttonFrame.origin.x + buttonFrame.size.width > self.view.frame.size.width){
-            //if it hit the left side || hit the right side
-         //   clickMe.hidden = YES;
-            buttonVelocity.x *= -1;
-            //move right
-            buttonFrame.origin.x += buttonVelocity.x;
-        }
-        if (buttonFrame.origin.y < 0  || buttonFrame.origin.y + buttonFrame.size.height > self.view.frame.size.height){
-            //if it hit the top side || hit the bottom side
-           // clickMe.hidden = YES;
-
-            buttonVelocity.y *= -1;
-            buttonFrame.origin.y += buttonVelocity.y;
-
-        }
-
-        [clickMe setFrame:buttonFrame];
-        [buttonVelocities replaceObjectAtIndex:buttonIndex withObject:[NSValue valueWithCGPoint:buttonVelocity]];
         
+        
+        
+////               origin is the top left hand corner
+//        if (buttonFrame.origin.x < 0  || buttonFrame.origin.x + buttonFrame.size.width > self.view.frame.size.width){
+//            //if it hit the left side || hit the right side
+//         //   clickMe.hidden = YES;
+//            buttonVelocity.x *= -1;
+//            //move right
+//            buttonFrame.origin.x += buttonVelocity.x;
+//        }
+//        if (buttonFrame.origin.y < 0  || buttonFrame.origin.y + buttonFrame.size.height > self.view.frame.size.height){
+//            //if it hit the top side || hit the bottom side
+//           // clickMe.hidden = YES;
+//
+//            buttonVelocity.y *= -1;
+//            buttonFrame.origin.y += buttonVelocity.y;
+//
+//        }
+//
+//        [clickMe setFrame:buttonFrame];
+//        [buttonVelocities replaceObjectAtIndex:buttonIndex withObject:[NSValue valueWithCGPoint:buttonVelocity]];
+//        
     }
 //    NSLog(buttonVelocities);
 
@@ -344,6 +380,13 @@
     
     [scoreLabel setText:[NSString stringWithFormat:@"Score: %d", score]];
     
+//    UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[sender] mode:UIPushBehaviorModeInstantaneous];
+//    [push setPushDirection:CGVectorMake(arc4random() % 4, arc4random() % 4)];
+//    
+//    [_animator addBehavior:push];
+//    [push setActive:YES];
+
+   // [sender removeFromSuperview];
     sender.hidden = YES;
     
 //    CGRect buttonFrame = sender.frame;

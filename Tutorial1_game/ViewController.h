@@ -28,7 +28,9 @@
     NSTimer * countdownTimer;
     int score;
     int numb_bubbles;
+    int bubble_max_speed;
     UIColor *previous_color;
+    
 }
 -(IBAction)pause:(id)sender;
 -(BOOL)isButtonOverlapping:(NSArray *)array button:(UIButton *)btn; 
