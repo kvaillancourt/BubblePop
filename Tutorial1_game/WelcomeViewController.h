@@ -14,6 +14,9 @@
 
 @interface WelcomeViewController : UIViewController {
     __weak IBOutlet UITextField *nameField;
+    __weak IBOutlet UIButton *playButton;
 }
+
+- (IBAction)buttonClick:(id)sender;
 
 @end

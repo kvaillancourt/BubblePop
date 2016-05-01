@@ -22,8 +22,12 @@
     // Setup CoreData with MagicalRecord
     // Step 1. Setup Core Data Stack with Magical Record
     // Step 2. Relax. Why not have a beer? Surely all this talk of beer is making you thirsty…
-    [MagicalRecord setupCoreDataStack];
+//    [MagicalRecord setupCoreDataStack];
 //    [MagicalRecord setupCoreDataStackWithStoreNamed:@"PlayerInfo"];
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+    pageControl.backgroundColor = [UIColor whiteColor];
     
     return YES;
 }

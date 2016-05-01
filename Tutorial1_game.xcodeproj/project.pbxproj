@@ -28,6 +28,9 @@
 		480B72551CD5CC8600B1CB1F /* cavas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 480B72541CD5CC8600B1CB1F /* cavas.jpg */; };
 		480B72601CD600A600B1CB1F /* Player+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 480B725D1CD600A600B1CB1F /* Player+CoreDataProperties.m */; };
 		480B72611CD600A600B1CB1F /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 480B725F1CD600A600B1CB1F /* Player.m */; };
+		480B726A1CD61D5000B1CB1F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 480B72691CD61D5000B1CB1F /* RootViewController.m */; };
+		480B726D1CD61FDF00B1CB1F /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 480B726C1CD61FDF00B1CB1F /* PageContentViewController.m */; };
+		480B726F1CD6418E00B1CB1F /* darkwoodbg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 480B726E1CD6418E00B1CB1F /* darkwoodbg.jpg */; };
 		481401A31CC73A0F00F7671A /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481401A21CC73A0F00F7671A /* WelcomeViewController.m */; };
 		481401A61CC742EE00F7671A /* ScoreboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481401A51CC742EE00F7671A /* ScoreboardViewController.m */; };
 		4829771C1CD4309B00B901BF /* bg~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4829771B1CD4309B00B901BF /* bg~iphone.png */; };
@@ -85,6 +88,11 @@
 		480B725D1CD600A600B1CB1F /* Player+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Player+CoreDataProperties.m"; sourceTree = "<group>"; };
 		480B725E1CD600A600B1CB1F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		480B725F1CD600A600B1CB1F /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		480B72681CD61D5000B1CB1F /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		480B72691CD61D5000B1CB1F /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		480B726B1CD61FDF00B1CB1F /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
+		480B726C1CD61FDF00B1CB1F /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
+		480B726E1CD6418E00B1CB1F /* darkwoodbg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = darkwoodbg.jpg; sourceTree = "<group>"; };
 		481401A11CC73A0F00F7671A /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		481401A21CC73A0F00F7671A /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		481401A41CC742EE00F7671A /* ScoreboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreboardViewController.h; sourceTree = "<group>"; };
@@ -146,13 +154,15 @@
 		4800CC101CC47BF3002BEBBE /* Tutorial1_game */ = {
 			isa = PBXGroup;
 			children = (
+				480B726B1CD61FDF00B1CB1F /* PageContentViewController.h */,
+				480B726C1CD61FDF00B1CB1F /* PageContentViewController.m */,
 				4800CC141CC47BF4002BEBBE /* AppDelegate.h */,
 				4800CC151CC47BF4002BEBBE /* AppDelegate.m */,
 				4800CC171CC47BF4002BEBBE /* ViewController.h */,
 				4800CC181CC47BF4002BEBBE /* ViewController.m */,
 				4800CC1A1CC47BF4002BEBBE /* Main.storyboard */,
-				481401A41CC742EE00F7671A /* ScoreboardViewController.h */,
 				481401A51CC742EE00F7671A /* ScoreboardViewController.m */,
+				481401A41CC742EE00F7671A /* ScoreboardViewController.h */,
 				481401A11CC73A0F00F7671A /* WelcomeViewController.h */,
 				481401A21CC73A0F00F7671A /* WelcomeViewController.m */,
 				4800CC201CC47BF4002BEBBE /* Assets.xcassets */,
@@ -164,6 +174,8 @@
 				480B725D1CD600A600B1CB1F /* Player+CoreDataProperties.m */,
 				480B725E1CD600A600B1CB1F /* Player.h */,
 				480B725F1CD600A600B1CB1F /* Player.m */,
+				480B72681CD61D5000B1CB1F /* RootViewController.h */,
+				480B72691CD61D5000B1CB1F /* RootViewController.m */,
 			);
 			path = Tutorial1_game;
 			sourceTree = "<group>";
@@ -171,6 +183,7 @@
 		4800CC111CC47BF3002BEBBE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				480B726E1CD6418E00B1CB1F /* darkwoodbg.jpg */,
 				480B72541CD5CC8600B1CB1F /* cavas.jpg */,
 				480B724E1CD5CAC900B1CB1F /* grey-2.jpg */,
 				480B72501CD5CB6600B1CB1F /* grey3.jpg */,
@@ -331,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4800CC241CC47BF4002BEBBE /* LaunchScreen.storyboard in Resources */,
+				480B726F1CD6418E00B1CB1F /* darkwoodbg.jpg in Resources */,
 				480B72551CD5CC8600B1CB1F /* cavas.jpg in Resources */,
 				4800CC4B1CC4A32F002BEBBE /* bubble.png in Resources */,
 				480B72471CD5C24700B1CB1F /* Grey-Background.png in Resources */,
@@ -420,8 +434,10 @@
 				480B72611CD600A600B1CB1F /* Player.m in Sources */,
 				480B72601CD600A600B1CB1F /* Player+CoreDataProperties.m in Sources */,
 				481401A61CC742EE00F7671A /* ScoreboardViewController.m in Sources */,
+				480B726D1CD61FDF00B1CB1F /* PageContentViewController.m in Sources */,
 				481401A31CC73A0F00F7671A /* WelcomeViewController.m in Sources */,
 				4800CC191CC47BF4002BEBBE /* ViewController.m in Sources */,
+				480B726A1CD61D5000B1CB1F /* RootViewController.m in Sources */,
 				4800CC1F1CC47BF4002BEBBE /* Tutorial1_game.xcdatamodeld in Sources */,
 				4800CC161CC47BF4002BEBBE /* AppDelegate.m in Sources */,
 				4800CC131CC47BF4002BEBBE /* main.m in Sources */,

@@ -7,6 +7,54 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="W9K-L5-Sbw">
+            <objects>
+                <viewController title="Root View Controller" id="bd4-2B-8OW" customClass="RootViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C9Z-Es-rTL"/>
+                        <viewControllerLayoutGuide type="bottom" id="vpn-Uq-vtR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uLs-mo-dDb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aS5-pK-b2X">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Start Again"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="162" y="544" width="77" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="startWalkThrough:" destination="bd4-2B-8OW" eventType="touchUpInside" id="xFZ-Oe-v35"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="aS5-pK-b2X"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="aS5-pK-b2X"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zvV-iI-5dB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2596.5" y="-126"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="7rZ-Nn-bOK">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="LXJ-Bh-eCV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5O1-5V-Gyu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1666.5" y="-360"/>
+        </scene>
         <!--Welcome View Controller-->
         <scene sceneID="hT7-xe-4Sy">
             <objects>
@@ -44,7 +92,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="playSegue" id="CHz-V9-pxW"/>
+                                    <action selector="buttonClick:" destination="8H1-uV-6d9" eventType="touchUpInside" id="C4O-NI-nup"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKQ-0J-mt4">
@@ -57,7 +105,7 @@
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cen-cS-9KS">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <accessibility key="accessibilityConfiguration" label="Name Entry">
+                                <accessibility key="accessibilityConfiguration" label="Name">
                                     <accessibilityTraits key="traits" playsSound="YES"/>
                                 </accessibility>
                                 <constraints>
@@ -127,6 +175,8 @@
                     </view>
                     <connections>
                         <outlet property="nameField" destination="Cen-cS-9KS" id="Knb-se-XcR"/>
+                        <outlet property="playButton" destination="Vef-af-tVQ" id="zFj-Qw-e9h"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="ShowGameScreen" id="v66-X0-4Aw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ftw-JF-YAw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -223,10 +273,61 @@
             </objects>
             <point key="canvasLocation" x="559.5" y="-295"/>
         </scene>
+        <!--Page Content Controller-->
+        <scene sceneID="kK9-8S-6YO">
+            <objects>
+                <viewController storyboardIdentifier="PageContentViewController" title="Page Content Controller" id="ahT-C9-jWk" customClass="PageContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ayo-mZ-7LO"/>
+                        <viewControllerLayoutGuide type="bottom" id="aYf-5d-gaN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xYS-A2-xIo" customClass="PageContentViewController">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tbG-wD-i2U">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="40" y="63" width="329" height="475"/>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Soi-MF-e0q">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="179" y="28" width="42" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="tbG-wD-i2U"/>
+                                <exclude reference="Soi-MF-e0q"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="tbG-wD-i2U"/>
+                                <include reference="Soi-MF-e0q"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="tbG-wD-i2U" id="KBp-by-hwY"/>
+                        <outlet property="titleLabel" destination="Soi-MF-e0q" id="oPK-MH-CPh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nde-v5-XXU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1666.5" y="349"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -237,6 +338,9 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time: 60  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tok-uB-q7u">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="71" id="2Dh-eT-Sza"/>
                                 </constraints>
@@ -256,6 +360,9 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0    " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZY-py-qF1">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="121" id="bMS-d4-ISY"/>
                                 </constraints>
@@ -329,7 +436,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="ZRH-CT-IDT"/>
         <segue reference="9Xq-21-sAN"/>
-        <segue reference="Vp3-wD-aoO"/>
     </inferredMetricsTieBreakers>
 </document>

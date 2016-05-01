@@ -30,7 +30,12 @@
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Player"];
     players = [context executeFetchRequest:request error:nil];
     
-    //TODO sort the fuck up!
+    //sorting
+    NSSortDescriptor *valueDescriptor = [[NSSortDescriptor alloc] initWithKey:@"score" ascending:NO];
+    NSArray *descriptors = [NSArray arrayWithObject:valueDescriptor];
+    players = [players sortedArrayUsingDescriptors:descriptors];
+    
+    
     
     // Do any additional setup after loading the view.
 }
@@ -48,7 +53,7 @@
     UITableViewCell * tableCell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     Player *player = [players objectAtIndex:indexPath.row];
-    tableCell.textLabel.text = [NSString stringWithFormat:@"%@    %@", [player name], [player score]];
+    tableCell.textLabel.text = [NSString stringWithFormat:@"  %@    %@", [player name], [player score]];
     return tableCell; 
 }
 /*

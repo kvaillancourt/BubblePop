@@ -80,8 +80,15 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cavas.jpg"]];
 
-    bubble_max_speed = 2;
-    time = 2;
+    if(UIAccessibilityIsVoiceOverRunning())
+    {
+        bubble_max_speed = 1;
+    }
+    else
+    {
+        bubble_max_speed = 2;
+    }
+    time = 60;
     buttons = [[NSMutableArray alloc] init];
     buttonVelocities = [[NSMutableArray alloc] init];
     numb_bubbles = 13;
@@ -197,7 +204,7 @@
 
         
         UIAlertController * alert = [UIAlertController
-                                      alertControllerWithTitle:@"Finish"
+                                      alertControllerWithTitle:@"Game Over"
                                       message:[NSString stringWithFormat:@"Score: %d", score]
                                       preferredStyle:UIAlertControllerStyleAlert];
         
@@ -240,7 +247,7 @@
             if (colorNumber < 40){
                 //red
                 [clickMe setTintColor:red]; //UIColor.redColor
-            //     clickMe.accessibilityLabel = @"Red Bubble";
+                 clickMe.accessibilityLabel = @"Red Bubble";
         
                 //Protanopia Color Seen
                 //[clickMe setTintColor:[UIColor colorWithRed:150.0f/255.0f green:135.0f/255.0f blue:38.0f/255.0f alpha:1]];
@@ -255,7 +262,7 @@
             else if (colorNumber < 70){
                 //pink
                 [clickMe setTintColor:pink];
-            //    clickMe.accessibilityLabel = @"Pink Bubble";
+                clickMe.accessibilityLabel = @"Pink Bubble";
                 
                 //Protanopia Color Seen
                 //[clickMe setTintColor:[UIColor colorWithRed:207.0f/255.0f green:215.0f/255.0f blue:255.0f/255.0f alpha:1]];
@@ -270,7 +277,7 @@
             else if (colorNumber < 85){
                 //green
                 [clickMe setTintColor:green];
-              //  clickMe.accessibilityLabel = @"Green Bubble";
+                clickMe.accessibilityLabel = @"Green Bubble";
                 
                 //Protanopia Color Seen
                 //[clickMe setTintColor:[UIColor colorWithRed:246.0f/255.0f green:220.0f/255.0f blue:0.0f/255.0f alpha:1]];
@@ -285,7 +292,7 @@
             else if (colorNumber < 95){
                 //blue
                 [clickMe setTintColor:blue];
-                // clickMe.accessibilityLabel = @"Blue Bubble";
+                 clickMe.accessibilityLabel = @"Blue Bubble";
                 
                 //Protanopia Color Seen
                 //[clickMe setTintColor:[UIColor colorWithRed:0.0f/255.0f green:120.0f/255.0f blue:240.0f/255.0f alpha:1]];
@@ -300,7 +307,8 @@
             else {
                 //black - Same color for Protanopia, Deuteranopia, and Tritanopita
                 [clickMe setTintColor:UIColor.blackColor];
-            }
+                clickMe.accessibilityLabel = @"Black Bubble";
+                            }
             
             UIImage * image = [clickMe.currentBackgroundImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
             
@@ -322,8 +330,31 @@
 - (void)timerTick{
         //move the button
     for (UIButton * clickMe in buttons) {
+        
+        
+        
         UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[clickMe] mode:UIPushBehaviorModeInstantaneous];
-        [push setPushDirection:CGVectorMake((arc4random() % bubble_max_speed) / 4.0 + (60 - time) * 0.01, arc4random() % bubble_max_speed / 4.0 + (60 - time) * 0.01)];
+
+        int is_negative = (arc4random() % 2);
+        int other_is_negative = (arc4random() % 2);
+        
+        float x = (arc4random() % bubble_max_speed) / 4.0 + (60 - time) * 0.01;
+        float y = arc4random() % bubble_max_speed / 4.0 + (60 - time) * 0.01;
+        if (is_negative && other_is_negative){
+            [push setPushDirection:CGVectorMake(-x, -y)];
+        }
+        else if (!is_negative && other_is_negative) {
+            [push setPushDirection:CGVectorMake(x, -y)];
+            
+        }
+        else if (is_negative && !other_is_negative) {
+            [push setPushDirection:CGVectorMake(-x, y)];
+            
+        }
+        else {
+            [push setPushDirection:CGVectorMake(x, y)];
+            
+        }
         
         [_animator addBehavior:push];
         [push setActive:YES];
@@ -335,6 +366,8 @@
 
 - (IBAction)buttonClick:(UIButton *)sender{
     float bonus = 1;
+    int scoreBefore = score;
+    
     if (previous_color == sender.tintColor){
         bonus = 1.5;
     }
@@ -356,10 +389,10 @@
         score += (int)(1*bonus);
     }
     
-    if(UIAccessibilityIsVoiceOverRunning())
+    if( (scoreBefore != score) && (UIAccessibilityIsVoiceOverRunning()))
     {
-        UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, @"cats");
-    UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification,[NSString stringWithFormat:@"Socre is at %d", score]);
+        UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, [NSString stringWithFormat:@"Score: %d", score]);
+
     }
     
     [scoreLabel setText:[NSString stringWithFormat:@"Score: %d", score]];
