@@ -7,19 +7,31 @@
 //
 
 #import "ScoreboardViewController.h"
+#import "AppDelegate.h"
+#import "Player.h"
+@interface ScoreboardViewController (){
+    NSArray *players;
+    
+}
 
-@interface ScoreboardViewController ()
-@property (weak, nonatomic) IBOutlet UITableView *board;
-//var names = [String]()
+@property (weak, nonatomic) IBOutlet UITableView *scoreBoardTableView;
+
 @end
 
 @implementation ScoreboardViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    title = "\"The List\""
-//    tableView.registerClass(UITableViewCell.self,
-//                            forCellReuseIdentifier: "Cell")
+    [self.scoreBoardTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    
+    AppDelegate *ad = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = ad.managedObjectContext;
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Player"];
+    players = [context executeFetchRequest:request error:nil];
+    
+    //TODO sort the fuck up!
+    
     // Do any additional setup after loading the view.
 }
 
@@ -28,6 +40,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return players.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell * tableCell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    Player *player = [players objectAtIndex:indexPath.row];
+    tableCell.textLabel.text = [NSString stringWithFormat:@"%@    %@", [player name], [player score]];
+    return tableCell; 
+}
 /*
 #pragma mark - Navigation
 

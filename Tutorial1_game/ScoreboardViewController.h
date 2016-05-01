@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ScoreboardViewController : UIViewController
+@interface ScoreboardViewController : UIViewController<UITableViewDataSource>
 
 @end

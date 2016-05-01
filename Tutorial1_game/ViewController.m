@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AppDelegate.h"
 
 @interface ViewController ()
 
@@ -14,10 +15,12 @@
 
 @implementation ViewController
 
+@synthesize player;
+
 - (UIButton *)createNewButton{
     UIButton * clickMe = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, (int) (800 /(numb_bubbles)), (int)(800 / (numb_bubbles)))];
     [clickMe addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-    [clickMe setBackgroundImage:[UIImage imageNamed:@"bubble.png"] forState:UIControlStateNormal];
+    [clickMe setBackgroundImage:[UIImage imageNamed:@"circle.png"] forState:UIControlStateNormal];
     [clickMe setBackgroundImage:[UIImage imageNamed:@"splat.png"] forState:UIControlStateHighlighted];
     
     
@@ -75,13 +78,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Black-iphone-6-background.jpg"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cavas.jpg"]];
 
     bubble_max_speed = 2;
-    time = 60;
+    time = 2;
     buttons = [[NSMutableArray alloc] init];
     buttonVelocities = [[NSMutableArray alloc] init];
-    numb_bubbles = 15;
+    numb_bubbles = 13;
+    
+    
+    green = [UIColor colorWithRed:0.0f/255.0f green:255.0f/255.0f blue:0.0f/255.0f alpha:1];
+    blue = [UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:204.0f/255.0f alpha:1];
+    red = [UIColor colorWithRed:255.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:1.0];
+    pink = [UIColor colorWithRed:255.0f/255.0f green:204.0f/255.0f blue:255.0f/255.0f alpha:1];
+    
     
     _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
 
@@ -173,6 +183,18 @@
 - (void)countdownTick{
     //if the game is finished
     if (time == 0){
+        [moveTimer invalidate];
+        [countdownTimer invalidate];
+        
+        //access player here
+        [player setScore:[NSNumber numberWithInteger:score]];
+        //save player
+        AppDelegate *ad = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+        NSManagedObjectContext *context = ad.managedObjectContext;
+        
+        [context save:nil];
+        
+
         
         UIAlertController * alert = [UIAlertController
                                       alertControllerWithTitle:@"Finish"
@@ -217,22 +239,66 @@
         if (was_hidden && !clickMe.hidden){
             if (colorNumber < 40){
                 //red
-                [clickMe setTintColor:UIColor.redColor];
+                [clickMe setTintColor:red]; //UIColor.redColor
+            //     clickMe.accessibilityLabel = @"Red Bubble";
+        
+                //Protanopia Color Seen
+                //[clickMe setTintColor:[UIColor colorWithRed:150.0f/255.0f green:135.0f/255.0f blue:38.0f/255.0f alpha:1]];
+                
+                //Deuteranopia Color Seen
+                //[clickMe setTintColor:[UIColor colorWithRed:169.0f/255.0f green:130.0f/255.0f blue:0.0f/255.0f alpha:1]];
+                
+                //Tritanopita Color Seen
+                //[clickMe setTintColor:[UIColor colorWithRed:254.0f/255.0f green:028.0f/255.0f blue:0.0f/255.0f alpha:1]];
+                
             }
             else if (colorNumber < 70){
                 //pink
-                [clickMe setTintColor:[UIColor colorWithRed:255.0f/255.0f green:204.0f/255.0f blue:255.0f/255.0f alpha:1]]; //UIColor.magentaColor];
+                [clickMe setTintColor:pink];
+            //    clickMe.accessibilityLabel = @"Pink Bubble";
+                
+                //Protanopia Color Seen
+                //[clickMe setTintColor:[UIColor colorWithRed:207.0f/255.0f green:215.0f/255.0f blue:255.0f/255.0f alpha:1]];
+                
+                //Deuteranopia Color Seen
+                //[clickMe setTintColor:[UIColor colorWithRed:255.0f/255.0f green:216.0f/255.0f blue:253.0f/255.0f alpha:1]];
+                
+                //Tritanopita Color Seen
+                //[clickMe setTintColor:[UIColor colorWithRed:251.0f/255.0f green:209.0f/255.0f blue:225.0f/255.0f alpha:1]];
+                
             }
             else if (colorNumber < 85){
                 //green
-                [clickMe setTintColor:UIColor.greenColor];
+                [clickMe setTintColor:green];
+              //  clickMe.accessibilityLabel = @"Green Bubble";
+                
+                //Protanopia Color Seen
+                //[clickMe setTintColor:[UIColor colorWithRed:246.0f/255.0f green:220.0f/255.0f blue:0.0f/255.0f alpha:1]];
+                
+                //Deuteranopia Color Seen
+                //[clickMe setTintColor:[UIColor colorWithRed:255.0f/255.0f green:205.0f/255.0f blue:114.0f/255.0f alpha:1]];
+                
+                //Tritanopita Color Seen
+                //[clickMe setTintColor:[UIColor colorWithRed:115.0f/255.0f green:247.0f/255.0f blue:225.0f/255.0f alpha:1]];
+                 
             }
             else if (colorNumber < 95){
                 //blue
-                [clickMe setTintColor:UIColor.blueColor];
+                [clickMe setTintColor:blue];
+                // clickMe.accessibilityLabel = @"Blue Bubble";
+                
+                //Protanopia Color Seen
+                //[clickMe setTintColor:[UIColor colorWithRed:0.0f/255.0f green:120.0f/255.0f blue:240.0f/255.0f alpha:1]];
+                
+                //Deuteranopia Color Seen
+                //[clickMe setTintColor:[UIColor colorWithRed:0.0f/255.0f green:118.0f/255.0f blue:190.0f/255.0f alpha:1]];
+                
+                //Tritanopita Color Seen
+                //[clickMe setTintColor:[UIColor colorWithRed:0.0f/255.0f green:127.0f/255.0f blue:133.0f/255.0f alpha:1]];
+                
             }
             else {
-                //black
+                //black - Same color for Protanopia, Deuteranopia, and Tritanopita
                 [clickMe setTintColor:UIColor.blackColor];
             }
             
@@ -276,14 +342,24 @@
     
     if (sender.tintColor == UIColor.blackColor){
         score += (int)(10*bonus);
-    }   else if (sender.tintColor == UIColor.blueColor){
+    }   else if (sender.tintColor == blue){
+        //Blue
         score += (int)(8*bonus);
-    }    else if (sender.tintColor == UIColor.greenColor){
+    }    else if (sender.tintColor == green){
+        //Green
         score += (int)(5*bonus);
-    }   else if (sender.tintColor == UIColor.magentaColor){
+    }   else if (sender.tintColor == pink){
+        //Pink
         score += (int)(2*bonus);
-    }    else if (sender.tintColor == UIColor.redColor){
+    }    else if (sender.tintColor == red){
+        //Red
         score += (int)(1*bonus);
+    }
+    
+    if(UIAccessibilityIsVoiceOverRunning())
+    {
+        UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, @"cats");
+    UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification,[NSString stringWithFormat:@"Socre is at %d", score]);
     }
     
     [scoreLabel setText:[NSString stringWithFormat:@"Score: %d", score]];

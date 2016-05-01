@@ -9,15 +9,11 @@
 #import <UIKit/UIKit.h>
 
 #import <MagicalRecord/MagicalRecord.h>
+#import "Player.h"
 //@class Player;
 
 @interface WelcomeViewController : UIViewController {
-    NSString *name;
     __weak IBOutlet UITextField *nameField;
 }
-
-//@property (nonatomic, strong) Player *player;
-
--(IBAction)saveName:(id)sender;
 
 @end

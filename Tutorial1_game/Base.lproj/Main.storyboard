@@ -21,12 +21,14 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgK-Sg-9UD">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <accessibility key="accessibilityConfiguration" label="Welcome Heading"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vef-af-tVQ">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <accessibility key="accessibilityConfiguration" hint="Double Tap to Play" label="Play"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="k5l-P4-JOO"/>
                                 </constraints>
@@ -47,13 +49,17 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKQ-0J-mt4">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <accessibility key="accessibilityConfiguration" hint="Double tap to see scoreboard" label="Scoreboard"/>
                                 <state key="normal" title="Scoreboard"/>
                                 <connections>
                                     <segue destination="mbK-hU-ZDp" kind="show" id="of2-Wu-EBp"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name... " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cen-cS-9KS">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cen-cS-9KS">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label="Name Entry">
+                                    <accessibilityTraits key="traits" playsSound="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="oGQ-ay-Spk"/>
                                 </constraints>
@@ -69,9 +75,6 @@
                                         <include reference="oGQ-ay-Spk"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <action selector="saveNametoCoreData:" destination="8H1-uV-6d9" eventType="editingDidEnd" id="JHg-Nx-UKw"/>
-                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -144,6 +147,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scoreboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gs-EW-IyX">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <accessibility key="accessibilityConfiguration" label="Scoreboard Heading"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -151,9 +155,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P7g-Ev-UUb">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="mbK-hU-ZDp" id="Ewm-3f-nbb"/>
+                                    <outlet property="delegate" destination="mbK-hU-ZDp" id="V9z-fm-b2u"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L00-1f-Ue8">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label="Main Menu"/>
                                 <state key="normal" title="Main"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="27" y="20" width="33" height="30"/>
@@ -207,7 +216,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="board" destination="P7g-Ev-UUb" id="Ax9-m9-is1"/>
+                        <outlet property="scoreBoardTableView" destination="P7g-Ev-UUb" id="D1b-Pm-4o8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jdg-NP-FJU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -321,6 +330,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="9Xq-21-sAN"/>
-        <segue reference="ZRH-CT-IDT"/>
+        <segue reference="Vp3-wD-aoO"/>
     </inferredMetricsTieBreakers>
 </document>

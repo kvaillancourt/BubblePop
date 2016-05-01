@@ -2,14 +2,9 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15C50" minimumToolsVersion="Xcode 7.0">
     <entity name="Player" representedClassName="Player" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlayerDetails" inverseName="relationship" inverseEntity="PlayerDetails" syncable="YES"/>
-    </entity>
-    <entity name="PlayerDetails" representedClassName="PlayerDetails" syncable="YES">
-        <attribute name="score" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="relationship" inverseEntity="Player" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
         <element name="Player" positionX="-45" positionY="0" width="128" height="75"/>
-        <element name="PlayerDetails" positionX="-18" positionY="36" width="128" height="75"/>
     </elements>
 </model>

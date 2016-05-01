@@ -18,11 +18,20 @@
 		4800CC3A1CC47BF4002BEBBE /* Tutorial1_gameUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4800CC391CC47BF4002BEBBE /* Tutorial1_gameUITests.m */; };
 		4800CC4B1CC4A32F002BEBBE /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 4800CC4A1CC4A32F002BEBBE /* bubble.png */; };
 		4800CC4D1CC4A465002BEBBE /* splat.png in Resources */ = {isa = PBXBuildFile; fileRef = 4800CC4C1CC4A465002BEBBE /* splat.png */; };
+		480B72471CD5C24700B1CB1F /* Grey-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 480B72461CD5C24700B1CB1F /* Grey-Background.png */; };
+		480B72491CD5C2B300B1CB1F /* wood-iphone6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 480B72481CD5C2B300B1CB1F /* wood-iphone6.jpg */; };
+		480B724B1CD5C42700B1CB1F /* grey_gradient-6plus.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 480B724A1CD5C42700B1CB1F /* grey_gradient-6plus.jpeg */; };
+		480B724D1CD5CA6400B1CB1F /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 480B724C1CD5CA6400B1CB1F /* circle.png */; };
+		480B724F1CD5CAC900B1CB1F /* grey-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 480B724E1CD5CAC900B1CB1F /* grey-2.jpg */; };
+		480B72511CD5CB6600B1CB1F /* grey3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 480B72501CD5CB6600B1CB1F /* grey3.jpg */; };
+		480B72531CD5CC1F00B1CB1F /* grey7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 480B72521CD5CC1F00B1CB1F /* grey7.jpg */; };
+		480B72551CD5CC8600B1CB1F /* cavas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 480B72541CD5CC8600B1CB1F /* cavas.jpg */; };
+		480B72601CD600A600B1CB1F /* Player+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 480B725D1CD600A600B1CB1F /* Player+CoreDataProperties.m */; };
+		480B72611CD600A600B1CB1F /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 480B725F1CD600A600B1CB1F /* Player.m */; };
 		481401A31CC73A0F00F7671A /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481401A21CC73A0F00F7671A /* WelcomeViewController.m */; };
 		481401A61CC742EE00F7671A /* ScoreboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481401A51CC742EE00F7671A /* ScoreboardViewController.m */; };
 		4829771C1CD4309B00B901BF /* bg~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4829771B1CD4309B00B901BF /* bg~iphone.png */; };
 		482B99B51CD4C82E00B47BEF /* Black-iphone-6-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 482B99B41CD4C82E00B47BEF /* Black-iphone-6-background.jpg */; };
-		48744D0D1CD4F6B000DD80F8 /* PlayerInfo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48744D0B1CD4F6B000DD80F8 /* PlayerInfo.xcdatamodeld */; };
 		E69EEB0FB36803C290FA9C31 /* libPods-Tutorial1_game.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFF178333C725DCA7C8EE89 /* libPods-Tutorial1_game.a */; };
 /* End PBXBuildFile section */
 
@@ -64,13 +73,24 @@
 		4800CC3B1CC47BF4002BEBBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4800CC4A1CC4A32F002BEBBE /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
 		4800CC4C1CC4A465002BEBBE /* splat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splat.png; sourceTree = "<group>"; };
+		480B72461CD5C24700B1CB1F /* Grey-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grey-Background.png"; sourceTree = "<group>"; };
+		480B72481CD5C2B300B1CB1F /* wood-iphone6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wood-iphone6.jpg"; sourceTree = "<group>"; };
+		480B724A1CD5C42700B1CB1F /* grey_gradient-6plus.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grey_gradient-6plus.jpeg"; sourceTree = "<group>"; };
+		480B724C1CD5CA6400B1CB1F /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		480B724E1CD5CAC900B1CB1F /* grey-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grey-2.jpg"; sourceTree = "<group>"; };
+		480B72501CD5CB6600B1CB1F /* grey3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grey3.jpg; sourceTree = "<group>"; };
+		480B72521CD5CC1F00B1CB1F /* grey7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grey7.jpg; sourceTree = "<group>"; };
+		480B72541CD5CC8600B1CB1F /* cavas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cavas.jpg; sourceTree = "<group>"; };
+		480B725C1CD600A600B1CB1F /* Player+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Player+CoreDataProperties.h"; sourceTree = "<group>"; };
+		480B725D1CD600A600B1CB1F /* Player+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Player+CoreDataProperties.m"; sourceTree = "<group>"; };
+		480B725E1CD600A600B1CB1F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		480B725F1CD600A600B1CB1F /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		481401A11CC73A0F00F7671A /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		481401A21CC73A0F00F7671A /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		481401A41CC742EE00F7671A /* ScoreboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreboardViewController.h; sourceTree = "<group>"; };
 		481401A51CC742EE00F7671A /* ScoreboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreboardViewController.m; sourceTree = "<group>"; };
 		4829771B1CD4309B00B901BF /* bg~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg~iphone.png"; sourceTree = "<group>"; };
 		482B99B41CD4C82E00B47BEF /* Black-iphone-6-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Black-iphone-6-background.jpg"; sourceTree = "<group>"; };
-		48744D0C1CD4F6B000DD80F8 /* PlayerInfo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlayerInfo.xcdatamodel; sourceTree = "<group>"; };
 		C06D0D5AD8FDDF9DF3717436 /* Pods-Tutorial1_game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutorial1_game.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tutorial1_game/Pods-Tutorial1_game.debug.xcconfig"; sourceTree = "<group>"; };
 		D70AD35CF6AA97BDA04592BE /* Pods-Tutorial1_game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutorial1_game.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tutorial1_game/Pods-Tutorial1_game.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,12 +155,15 @@
 				481401A51CC742EE00F7671A /* ScoreboardViewController.m */,
 				481401A11CC73A0F00F7671A /* WelcomeViewController.h */,
 				481401A21CC73A0F00F7671A /* WelcomeViewController.m */,
-				48744D0B1CD4F6B000DD80F8 /* PlayerInfo.xcdatamodeld */,
 				4800CC201CC47BF4002BEBBE /* Assets.xcassets */,
 				4800CC221CC47BF4002BEBBE /* LaunchScreen.storyboard */,
 				4800CC251CC47BF4002BEBBE /* Info.plist */,
 				4800CC1D1CC47BF4002BEBBE /* Tutorial1_game.xcdatamodeld */,
 				4800CC111CC47BF3002BEBBE /* Supporting Files */,
+				480B725C1CD600A600B1CB1F /* Player+CoreDataProperties.h */,
+				480B725D1CD600A600B1CB1F /* Player+CoreDataProperties.m */,
+				480B725E1CD600A600B1CB1F /* Player.h */,
+				480B725F1CD600A600B1CB1F /* Player.m */,
 			);
 			path = Tutorial1_game;
 			sourceTree = "<group>";
@@ -148,9 +171,17 @@
 		4800CC111CC47BF3002BEBBE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				480B72541CD5CC8600B1CB1F /* cavas.jpg */,
+				480B724E1CD5CAC900B1CB1F /* grey-2.jpg */,
+				480B72501CD5CB6600B1CB1F /* grey3.jpg */,
+				480B724A1CD5C42700B1CB1F /* grey_gradient-6plus.jpeg */,
+				480B72481CD5C2B300B1CB1F /* wood-iphone6.jpg */,
+				480B72521CD5CC1F00B1CB1F /* grey7.jpg */,
+				480B72461CD5C24700B1CB1F /* Grey-Background.png */,
 				482B99B41CD4C82E00B47BEF /* Black-iphone-6-background.jpg */,
 				4829771B1CD4309B00B901BF /* bg~iphone.png */,
 				4800CC4C1CC4A465002BEBBE /* splat.png */,
+				480B724C1CD5CA6400B1CB1F /* circle.png */,
 				4800CC4A1CC4A32F002BEBBE /* bubble.png */,
 				4800CC121CC47BF3002BEBBE /* main.m */,
 			);
@@ -300,9 +331,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4800CC241CC47BF4002BEBBE /* LaunchScreen.storyboard in Resources */,
+				480B72551CD5CC8600B1CB1F /* cavas.jpg in Resources */,
 				4800CC4B1CC4A32F002BEBBE /* bubble.png in Resources */,
+				480B72471CD5C24700B1CB1F /* Grey-Background.png in Resources */,
+				480B724F1CD5CAC900B1CB1F /* grey-2.jpg in Resources */,
+				480B724B1CD5C42700B1CB1F /* grey_gradient-6plus.jpeg in Resources */,
+				480B72511CD5CB6600B1CB1F /* grey3.jpg in Resources */,
+				480B724D1CD5CA6400B1CB1F /* circle.png in Resources */,
 				482B99B51CD4C82E00B47BEF /* Black-iphone-6-background.jpg in Resources */,
 				4829771C1CD4309B00B901BF /* bg~iphone.png in Resources */,
+				480B72491CD5C2B300B1CB1F /* wood-iphone6.jpg in Resources */,
+				480B72531CD5CC1F00B1CB1F /* grey7.jpg in Resources */,
 				4800CC4D1CC4A465002BEBBE /* splat.png in Resources */,
 				4800CC211CC47BF4002BEBBE /* Assets.xcassets in Resources */,
 				4800CC1C1CC47BF4002BEBBE /* Main.storyboard in Resources */,
@@ -378,12 +417,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				480B72611CD600A600B1CB1F /* Player.m in Sources */,
+				480B72601CD600A600B1CB1F /* Player+CoreDataProperties.m in Sources */,
 				481401A61CC742EE00F7671A /* ScoreboardViewController.m in Sources */,
 				481401A31CC73A0F00F7671A /* WelcomeViewController.m in Sources */,
 				4800CC191CC47BF4002BEBBE /* ViewController.m in Sources */,
 				4800CC1F1CC47BF4002BEBBE /* Tutorial1_game.xcdatamodeld in Sources */,
 				4800CC161CC47BF4002BEBBE /* AppDelegate.m in Sources */,
-				48744D0D1CD4F6B000DD80F8 /* PlayerInfo.xcdatamodeld in Sources */,
 				4800CC131CC47BF4002BEBBE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -648,16 +688,6 @@
 			);
 			currentVersion = 4800CC1E1CC47BF4002BEBBE /* Tutorial1_game.xcdatamodel */;
 			path = Tutorial1_game.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		48744D0B1CD4F6B000DD80F8 /* PlayerInfo.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				48744D0C1CD4F6B000DD80F8 /* PlayerInfo.xcdatamodel */,
-			);
-			currentVersion = 48744D0C1CD4F6B000DD80F8 /* PlayerInfo.xcdatamodel */;
-			path = PlayerInfo.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

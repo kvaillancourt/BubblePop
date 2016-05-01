@@ -7,8 +7,9 @@
 //
 
 #import "WelcomeViewController.h"
-#import "../Player.h"
-#import "../PlayerDetails.h"
+#import "Player.h"
+#import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface WelcomeViewController ()
 
@@ -18,45 +19,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    name = @"";
-    
-//    // 1. If there is no beer, create new Beer
-//    if (!self.player) {
-//        self.player = [Player createEntity];
-//    }
-//    // 2. If there are no beer details, create new BeerDetails
-//    if (!self.player.playerDetails) {
-//        self.player.playerDetails = [PlayerDetails createEntity];
-//    }
-//    // View setup
-//    // 3. Set the title, name, note field and rating of the beer
-//    self.title = self.player.name ? self.player.name : @"New Player";
-//    self.playerNameField.text = self.player.name;
-////    self.beerNotesView.text = self.beer.beerDetails.note;
-////    self.ratingControl.rating = [self.beer.beerDetails.rating integerValue];
-//    [self.cellOne addSubview:self.ratingControl];
-//    
-////    // 4. If there is an image path in the details, show it.
-////    if ([self.beer.beerDetails.image length] > 0) {
-////        // Image setup
-////        NSData *imgData = [NSData dataWithContentsOfFile:[NSHomeDirectory() stringByAppendingPathComponent:self.beer.beerDetails.image]];
-////        [self setImageForBeer:[UIImage imageWithData:imgData]];
-////    }
-////    
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(IBAction)saveName:(id)sender {
-    if ([nameField.text length] > 0) {
-//        self.player.playerDetails.name = nameField.text;
-    }
-//    name = nameField.text;
-
 }
 
 
@@ -71,5 +38,25 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if(UIAccessibilityIsVoiceOverRunning())
+    {
+        
+    }
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    
+    AppDelegate *ad = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = ad.managedObjectContext;
+    Player *player = [NSEntityDescription insertNewObjectForEntityForName:@"Player" inManagedObjectContext:context];
+    player.name=nameField.text;
+    
+    ViewController *c = (ViewController *)[segue destinationViewController];
+    //    c.player=player;
+    [c setPlayer:player];
+    
+    // access the instance of viewController here
+}
 
 @end

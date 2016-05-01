@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MagicalRecord/MagicalRecord.h>
+#import "Player.h"
 @interface ViewController : UIViewController {
     
     NSMutableArray * buttons;
@@ -17,8 +17,6 @@
     //used for physics engine
     UIDynamicAnimator* _animator;
     UICollisionBehavior* _collision;
-
-    
     
     IBOutlet UIScreenEdgePanGestureRecognizer *pauseGuesture;
     IBOutlet UILabel * scoreLabel;
@@ -31,7 +29,14 @@
     int bubble_max_speed;
     UIColor *previous_color;
     
+    UIColor *green;
+    UIColor *blue;
+    UIColor *pink;
+    UIColor *red;
+    //black
+    
 }
+@property Player* player;
 -(IBAction)pause:(id)sender;
 -(BOOL)isButtonOverlapping:(NSArray *)array button:(UIButton *)btn; 
 - (UIButton *)createNewButton;
