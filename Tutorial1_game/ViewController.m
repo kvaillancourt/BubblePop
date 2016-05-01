@@ -137,10 +137,17 @@
     
 }
 
--(IBAction)pause:(id)sender{
+-(BOOL) accessibilityPerformMagicTap
+{
+    [self pauseActions];
+    return YES;
+}
+
+-(void) pauseActions
+{
     [moveTimer invalidate];
     [countdownTimer invalidate];
-
+    
     UIAlertController * alert = [UIAlertController
                                  alertControllerWithTitle:@"Pause"
                                  message:[NSString stringWithFormat:@"Score: %d", score]
@@ -163,28 +170,33 @@
                                                                              selector:@selector(countdownTick)
                                                                              userInfo:nil
                                                                               repeats:YES];
-                           
-
+                             
+                             
                          }];
     
     UIAlertAction* main = [UIAlertAction
-                         actionWithTitle:@"Quit"
-                         style:UIAlertActionStyleDefault
-                         handler:^(UIAlertAction * action)
-                         {
-                             [alert dismissViewControllerAnimated:YES completion:nil];
-                             [self performSegueWithIdentifier:@"ShowMainMenu" sender:self];
-
-                         }];
+                           actionWithTitle:@"Quit"
+                           style:UIAlertActionStyleDefault
+                           handler:^(UIAlertAction * action)
+                           {
+                               [alert dismissViewControllerAnimated:YES completion:nil];
+                               [self performSegueWithIdentifier:@"ShowMainMenu" sender:self];
+                               
+                           }];
     
     
     
     
     [alert addAction:ok];
     [alert addAction:main];
-
+    
     
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(IBAction)pause:(id)sender{
+    
+    [self pauseActions];
     
 }
 - (void)countdownTick{
