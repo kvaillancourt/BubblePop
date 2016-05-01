@@ -27,8 +27,6 @@
     int randomY = arc4random() % (int)(self.view.frame.size.height - buttonFrame.size.height);
 
 
-    
-//    CGRect buttonFrame = clickMe.frame;
     buttonFrame.origin.x = randomX;
     buttonFrame.origin.y = randomY;
     clickMe.frame = buttonFrame;
@@ -39,6 +37,7 @@
     UIDynamicItemBehavior *ballBehavior = [[UIDynamicItemBehavior alloc] initWithItems:buttons];
     ballBehavior.elasticity = 1;
     ballBehavior.friction = 0;
+    ballBehavior.angularResistance = 0;
     ballBehavior.resistance = 0;
     ballBehavior.allowsRotation = NO;
     
@@ -46,7 +45,26 @@
     
     
     UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[clickMe] mode:UIPushBehaviorModeInstantaneous];
-    [push setPushDirection:CGVectorMake(arc4random() % bubble_max_speed, arc4random() % bubble_max_speed)];
+    int is_negative = (arc4random() % 2);
+    int other_is_negative = (arc4random() % 2);
+    
+    float x = (arc4random() % bubble_max_speed) / 4.0;
+    float y = (arc4random() % bubble_max_speed) / 4.0;
+    if (is_negative && other_is_negative){
+            [push setPushDirection:CGVectorMake(-x, -y)];
+    }
+    else if (!is_negative && other_is_negative) {
+        [push setPushDirection:CGVectorMake(x, -y)];
+        
+    }
+    else if (is_negative && !other_is_negative) {
+        [push setPushDirection:CGVectorMake(-x, y)];
+        
+    }
+    else {
+        [push setPushDirection:CGVectorMake(x, y)];
+
+    }
     
     [_animator addBehavior:push];
     [push setActive:YES];
@@ -57,8 +75,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Black-iphone-6-background.jpg"]];
 
-    bubble_max_speed = 2.5;
+    bubble_max_speed = 2;
     time = 60;
     buttons = [[NSMutableArray alloc] init];
     buttonVelocities = [[NSMutableArray alloc] init];
@@ -76,7 +95,7 @@
     [self changeBubbleColor];
 
     // Do any additional setup after loading the view, typically from a nib.
-    moveTimer = [NSTimer scheduledTimerWithTimeInterval:5
+    moveTimer = [NSTimer scheduledTimerWithTimeInterval:3
                                                  target:self
                                                selector:@selector(timerTick)
                                                userInfo:nil
@@ -216,7 +235,7 @@
         //move the button
     for (UIButton * clickMe in buttons) {
         UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[clickMe] mode:UIPushBehaviorModeInstantaneous];
-        [push setPushDirection:CGVectorMake(arc4random() % 2, arc4random() % 2)];
+        [push setPushDirection:CGVectorMake((arc4random() % bubble_max_speed) / 4.0 + (60 - time) * 0.01, arc4random() % bubble_max_speed / 4.0 + (60 - time) * 0.01)];
         
         [_animator addBehavior:push];
         [push setActive:YES];

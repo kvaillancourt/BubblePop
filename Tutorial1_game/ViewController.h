@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <MagicalRecord/MagicalRecord.h>
 @interface ViewController : UIViewController {
     
     NSMutableArray * buttons;

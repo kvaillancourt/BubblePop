@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15C50" minimumToolsVersion="Xcode 7.0">
+    <entity name="WinnerDetails" representedClassName="WinnerDetails" syncable="YES">
+        <attribute name="score" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Winners" inverseName="relationshipinverse" inverseEntity="Winners" syncable="YES"/>
+    </entity>
+    <entity name="Winners" representedClassName="Winners" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationshipinverse" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WinnerDetails" inverseName="relationship" inverseEntity="WinnerDetails" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Winners" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="WinnerDetails" positionX="-54" positionY="0" width="128" height="75"/>
+    </elements>
+</model>
