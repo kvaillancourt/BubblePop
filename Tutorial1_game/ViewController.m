@@ -101,7 +101,7 @@
                                                userInfo:nil
                                                 repeats:YES];
     
-    moveTimer = [NSTimer scheduledTimerWithTimeInterval:1
+    countdownTimer = [NSTimer scheduledTimerWithTimeInterval:1
                                                  target:self
                                                selector:@selector(countdownTick)
                                                userInfo:nil
@@ -121,6 +121,9 @@
 }
 
 -(IBAction)pause:(id)sender{
+    [moveTimer invalidate];
+    [countdownTimer invalidate];
+
     UIAlertController * alert = [UIAlertController
                                  alertControllerWithTitle:@"Pause"
                                  message:[NSString stringWithFormat:@"Score: %d", score]
@@ -132,6 +135,19 @@
                          handler:^(UIAlertAction * action)
                          {
                              [alert dismissViewControllerAnimated:YES completion:nil];
+                             moveTimer = [NSTimer scheduledTimerWithTimeInterval:3
+                                                                          target:self
+                                                                        selector:@selector(timerTick)
+                                                                        userInfo:nil
+                                                                         repeats:YES];
+                             
+                             countdownTimer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                                               target:self
+                                                                             selector:@selector(countdownTick)
+                                                                             userInfo:nil
+                                                                              repeats:YES];
+                           
+
                          }];
     
     UIAlertAction* main = [UIAlertAction
@@ -140,6 +156,8 @@
                          handler:^(UIAlertAction * action)
                          {
                              [alert dismissViewControllerAnimated:YES completion:nil];
+                             [self performSegueWithIdentifier:@"ShowMainMenu" sender:self];
+
                          }];
     
     
@@ -167,6 +185,10 @@
                              handler:^(UIAlertAction * action)
                              {
                                  [alert dismissViewControllerAnimated:YES completion:nil];
+                                 [self performSegueWithIdentifier:@"ShowScoreboard" sender:self];
+//                                 UIViewController * vc = [[UIViewController alloc] init];
+//                                 [self presentViewController:vc animated:YES completion:nil];
+
                              }];
                              
         [alert addAction:ok];
@@ -199,7 +221,7 @@
             }
             else if (colorNumber < 70){
                 //pink
-                [clickMe setTintColor:UIColor.magentaColor];
+                [clickMe setTintColor:[UIColor colorWithRed:255.0f/255.0f green:204.0f/255.0f blue:255.0f/255.0f alpha:1]]; //UIColor.magentaColor];
             }
             else if (colorNumber < 85){
                 //green
@@ -207,7 +229,7 @@
             }
             else if (colorNumber < 95){
                 //blue
-                [clickMe setTintColor:UIColor.blueColor]; //[UIColor colorWithRed:0 green:0 blue:1.0f alpha:1]]
+                [clickMe setTintColor:UIColor.blueColor];
             }
             else {
                 //black
