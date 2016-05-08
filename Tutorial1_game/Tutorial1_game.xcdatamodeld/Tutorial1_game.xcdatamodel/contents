@@ -4,7 +4,13 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="score" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
+    <entity name="SettingsBundle" representedClassName="SettingsBundle" syncable="YES">
+        <attribute name="maxbubbles" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="maxtime" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="movebubble" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Player" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="SettingsBundle" positionX="-63" positionY="0" width="128" height="90"/>
     </elements>
 </model>

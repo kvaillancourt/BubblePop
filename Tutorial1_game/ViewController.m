@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "AppDelegate.h"
-
 @interface ViewController ()
 
 @end
@@ -16,9 +15,10 @@
 @implementation ViewController
 
 @synthesize player;
+@synthesize settings;
 
 - (UIButton *)createNewButton{
-    UIButton * clickMe = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, (int) (800 /(numb_bubbles)), (int)(800 / (numb_bubbles)))];
+    UIButton * clickMe = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, (int) (750 /(numb_bubbles)), (int)(750 / (numb_bubbles)))];
     [clickMe addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     [clickMe setBackgroundImage:[UIImage imageNamed:@"circle.png"] forState:UIControlStateNormal];
     [clickMe setBackgroundImage:[UIImage imageNamed:@"splat.png"] forState:UIControlStateHighlighted];
@@ -36,7 +36,7 @@
 
     [self.view addSubview:clickMe];
     
-    //physics shit
+    //physics
     UIDynamicItemBehavior *ballBehavior = [[UIDynamicItemBehavior alloc] initWithItems:buttons];
     ballBehavior.elasticity = 1;
     ballBehavior.friction = 0;
@@ -88,10 +88,27 @@
     {
         bubble_max_speed = 2;
     }
-    time = 60;
+    startTime = 60;
     buttons = [[NSMutableArray alloc] init];
-    buttonVelocities = [[NSMutableArray alloc] init];
-    numb_bubbles = 13;
+    numb_bubbles = 15;
+    
+    
+    AppDelegate *ad = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = ad.managedObjectContext;
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SettingsBundle"];
+    NSArray *previousSettings = [context executeFetchRequest:request error:nil];
+    
+    if (previousSettings.firstObject){
+        
+    settings = [previousSettings firstObject];
+    numb_bubbles = [[settings maxbubbles] integerValue];
+    startTime = [[settings maxtime] integerValue];
+        if (![[settings movebubble] boolValue]){
+            bubble_max_speed = 0;
+        }
+    }
+    time = startTime;
     
     
     green = [UIColor colorWithRed:0.0f/255.0f green:255.0f/255.0f blue:0.0f/255.0f alpha:1];
@@ -105,9 +122,8 @@
     for (int i = 0; i < numb_bubbles; i++){
         UIButton * button = [self createNewButton];
         [buttons addObject:button];
-        button.hidden = YES;
-     //   CGPoint vel = CGPointMake((int)(arc4random_uniform(20) - 11), (int)(arc4random_uniform(20) - 11));
-       // [buttonVelocities addObject:([NSValue valueWithCGPoint:vel])];
+        [button removeFromSuperview];
+
     }
     [self changeBubbleColor];
 
@@ -131,8 +147,18 @@
     _collision = [[UICollisionBehavior alloc]initWithItems:buttons];
     _collision.translatesReferenceBoundsIntoBoundary = YES;
     
+//    _gravity = [[UIGravityBehavior alloc] initWithItems:buttons];
+//
+//    CGVector vector = CGVectorMake(0.0, -1.0);
+//
+//    _gravity.gravityDirection = vector;
+//    
+//    [_animator addBehavior:_gravity];
+    
+    
     [_animator addBehavior:_collision];
 
+    
     
     
 }
@@ -206,12 +232,17 @@
         [countdownTimer invalidate];
         
         //access player here
-        [player setScore:[NSNumber numberWithInteger:score]];
-        //save player
-        AppDelegate *ad = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-        NSManagedObjectContext *context = ad.managedObjectContext;
-        
-        [context save:nil];
+        if (score > [[player score] integerValue]){
+            [player setScore:[NSNumber numberWithInteger:score]];
+            
+            //save player
+ 
+            AppDelegate *ad = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+            NSManagedObjectContext *context = ad.managedObjectContext;
+            
+            [context save:nil];
+
+        }
         
 
         
@@ -227,8 +258,6 @@
                              {
                                  [alert dismissViewControllerAnimated:YES completion:nil];
                                  [self performSegueWithIdentifier:@"ShowScoreboard" sender:self];
-//                                 UIViewController * vc = [[UIViewController alloc] init];
-//                                 [self presentViewController:vc animated:YES completion:nil];
 
                              }];
                              
@@ -249,13 +278,32 @@
 
 - (void)changeBubbleColor{
     for (UIButton * clickMe in buttons) {
-        bool was_hidden = clickMe.hidden;
-        clickMe.hidden = (bool)(arc4random() % 2);
+        bool was_hidden = false;
+        bool hide = (bool)(arc4random() % 2);
+        if(![clickMe superview]) {
+            //no superview means not in the view hierarchy
+            was_hidden = true;
+        }
+    
+        //clickMe.hidden = ;
 
+        if (!was_hidden && hide) {
+            //randomly hide
+            [clickMe removeFromSuperview];
+            
+        }
+        else if (!hide){
+            
+        
+            [self.view addSubview:clickMe];
+
+        
         
         int colorNumber = arc4random() % 100;
         
-        if (was_hidden && !clickMe.hidden){
+            //if it was hidden before, show a new color
+        if (was_hidden){
+
             if (colorNumber < 40){
                 //red
                 [clickMe setTintColor:red]; //UIColor.redColor
@@ -326,17 +374,9 @@
             
             [clickMe setBackgroundImage:image forState:UIControlStateNormal];
         }
-        
+    }
         
     }
-}
-
--(BOOL)isButtonOverlapping:(NSArray *)array button:(UIButton *)btn {
-    for (UIButton *btn_ in [array copy]) {
-        if (btn_ == btn){continue;}
-        if (CGRectIntersectsRect(btn_.frame, btn.frame) && !btn_.hidden) return YES;
-    }
-    return NO;
 }
 
 - (void)timerTick{
@@ -349,9 +389,12 @@
 
         int is_negative = (arc4random() % 2);
         int other_is_negative = (arc4random() % 2);
-        
-        float x = (arc4random() % bubble_max_speed) / 4.0 + (60 - time) * 0.01;
-        float y = arc4random() % bubble_max_speed / 4.0 + (60 - time) * 0.01;
+        float x = 0;
+        float y = 0;
+        if (bubble_max_speed != 0 ){
+            x = (arc4random() % bubble_max_speed) / 4.0 + (startTime - time) * 0.01;
+            y = arc4random() % bubble_max_speed / 4.0 + (startTime - time) * 0.01;
+        }
         if (is_negative && other_is_negative){
             [push setPushDirection:CGVectorMake(-x, -y)];
         }
@@ -410,8 +453,7 @@
     [scoreLabel setText:[NSString stringWithFormat:@"Score: %d", score]];
     
 
-   // [sender removeFromSuperview];
-    sender.hidden = YES;
+   [sender removeFromSuperview];
     
 }
 

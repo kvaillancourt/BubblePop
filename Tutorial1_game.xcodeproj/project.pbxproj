@@ -10,7 +10,6 @@
 		4800CC131CC47BF4002BEBBE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4800CC121CC47BF3002BEBBE /* main.m */; };
 		4800CC161CC47BF4002BEBBE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4800CC151CC47BF4002BEBBE /* AppDelegate.m */; };
 		4800CC191CC47BF4002BEBBE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4800CC181CC47BF4002BEBBE /* ViewController.m */; };
-		4800CC1C1CC47BF4002BEBBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4800CC1A1CC47BF4002BEBBE /* Main.storyboard */; };
 		4800CC1F1CC47BF4002BEBBE /* Tutorial1_game.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4800CC1D1CC47BF4002BEBBE /* Tutorial1_game.xcdatamodeld */; };
 		4800CC211CC47BF4002BEBBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4800CC201CC47BF4002BEBBE /* Assets.xcassets */; };
 		4800CC241CC47BF4002BEBBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4800CC221CC47BF4002BEBBE /* LaunchScreen.storyboard */; };
@@ -39,6 +38,11 @@
 		481401A61CC742EE00F7671A /* ScoreboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481401A51CC742EE00F7671A /* ScoreboardViewController.m */; };
 		4829771C1CD4309B00B901BF /* bg~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4829771B1CD4309B00B901BF /* bg~iphone.png */; };
 		482B99B51CD4C82E00B47BEF /* Black-iphone-6-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 482B99B41CD4C82E00B47BEF /* Black-iphone-6-background.jpg */; };
+		483EA7C71CDF1F8D008B19F8 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483EA7C61CDF1F8D008B19F8 /* SettingsViewController.m */; };
+		483EA7CC1CDF2E88008B19F8 /* SettingsBundle+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 483EA7C91CDF2E88008B19F8 /* SettingsBundle+CoreDataProperties.m */; };
+		483EA7CD1CDF2E88008B19F8 /* SettingsBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 483EA7CB1CDF2E88008B19F8 /* SettingsBundle.m */; };
+		483EA7D21CDF5A16008B19F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483EA7D11CDF5A16008B19F8 /* Main.storyboard */; };
+		483EA7D51CDF5E24008B19F8 /* CountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483EA7D41CDF5E24008B19F8 /* CountDownViewController.m */; };
 		E69EEB0FB36803C290FA9C31 /* libPods-Tutorial1_game.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFF178333C725DCA7C8EE89 /* libPods-Tutorial1_game.a */; };
 /* End PBXBuildFile section */
 
@@ -67,7 +71,6 @@
 		4800CC151CC47BF4002BEBBE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4800CC171CC47BF4002BEBBE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4800CC181CC47BF4002BEBBE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		4800CC1B1CC47BF4002BEBBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4800CC1E1CC47BF4002BEBBE /* Tutorial1_game.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tutorial1_game.xcdatamodel; sourceTree = "<group>"; };
 		4800CC201CC47BF4002BEBBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4800CC231CC47BF4002BEBBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -105,6 +108,15 @@
 		481401A51CC742EE00F7671A /* ScoreboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreboardViewController.m; sourceTree = "<group>"; };
 		4829771B1CD4309B00B901BF /* bg~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg~iphone.png"; sourceTree = "<group>"; };
 		482B99B41CD4C82E00B47BEF /* Black-iphone-6-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Black-iphone-6-background.jpg"; sourceTree = "<group>"; };
+		483EA7C51CDF1F8D008B19F8 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		483EA7C61CDF1F8D008B19F8 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		483EA7C81CDF2E88008B19F8 /* SettingsBundle+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SettingsBundle+CoreDataProperties.h"; sourceTree = "<group>"; };
+		483EA7C91CDF2E88008B19F8 /* SettingsBundle+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SettingsBundle+CoreDataProperties.m"; sourceTree = "<group>"; };
+		483EA7CA1CDF2E88008B19F8 /* SettingsBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsBundle.h; sourceTree = "<group>"; };
+		483EA7CB1CDF2E88008B19F8 /* SettingsBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsBundle.m; sourceTree = "<group>"; };
+		483EA7D11CDF5A16008B19F8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		483EA7D31CDF5E24008B19F8 /* CountDownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownViewController.h; sourceTree = "<group>"; };
+		483EA7D41CDF5E24008B19F8 /* CountDownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownViewController.m; sourceTree = "<group>"; };
 		C06D0D5AD8FDDF9DF3717436 /* Pods-Tutorial1_game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutorial1_game.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tutorial1_game/Pods-Tutorial1_game.debug.xcconfig"; sourceTree = "<group>"; };
 		D70AD35CF6AA97BDA04592BE /* Pods-Tutorial1_game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutorial1_game.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tutorial1_game/Pods-Tutorial1_game.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,15 +172,21 @@
 		4800CC101CC47BF3002BEBBE /* Tutorial1_game */ = {
 			isa = PBXGroup;
 			children = (
+				483EA7C81CDF2E88008B19F8 /* SettingsBundle+CoreDataProperties.h */,
+				483EA7C91CDF2E88008B19F8 /* SettingsBundle+CoreDataProperties.m */,
+				483EA7CA1CDF2E88008B19F8 /* SettingsBundle.h */,
+				483EA7CB1CDF2E88008B19F8 /* SettingsBundle.m */,
 				4800CC141CC47BF4002BEBBE /* AppDelegate.h */,
 				4800CC151CC47BF4002BEBBE /* AppDelegate.m */,
 				4800CC171CC47BF4002BEBBE /* ViewController.h */,
+				483EA7D31CDF5E24008B19F8 /* CountDownViewController.h */,
+				483EA7D41CDF5E24008B19F8 /* CountDownViewController.m */,
 				4800CC181CC47BF4002BEBBE /* ViewController.m */,
-				4800CC1A1CC47BF4002BEBBE /* Main.storyboard */,
 				481401A51CC742EE00F7671A /* ScoreboardViewController.m */,
 				481401A41CC742EE00F7671A /* ScoreboardViewController.h */,
 				481401A11CC73A0F00F7671A /* WelcomeViewController.h */,
 				481401A21CC73A0F00F7671A /* WelcomeViewController.m */,
+				483EA7D11CDF5A16008B19F8 /* Main.storyboard */,
 				4800CC201CC47BF4002BEBBE /* Assets.xcassets */,
 				4800CC221CC47BF4002BEBBE /* LaunchScreen.storyboard */,
 				4800CC251CC47BF4002BEBBE /* Info.plist */,
@@ -178,6 +196,8 @@
 				480B725D1CD600A600B1CB1F /* Player+CoreDataProperties.m */,
 				480B725E1CD600A600B1CB1F /* Player.h */,
 				480B725F1CD600A600B1CB1F /* Player.m */,
+				483EA7C51CDF1F8D008B19F8 /* SettingsViewController.h */,
+				483EA7C61CDF1F8D008B19F8 /* SettingsViewController.m */,
 			);
 			path = Tutorial1_game;
 			sourceTree = "<group>";
@@ -356,6 +376,7 @@
 				480B726F1CD6418E00B1CB1F /* darkwoodbg.jpg in Resources */,
 				480B72771CD654C000B1CB1F /* Balls.PNG in Resources */,
 				480B72551CD5CC8600B1CB1F /* cavas.jpg in Resources */,
+				483EA7D21CDF5A16008B19F8 /* Main.storyboard in Resources */,
 				4800CC4B1CC4A32F002BEBBE /* bubble.png in Resources */,
 				480B72471CD5C24700B1CB1F /* Grey-Background.png in Resources */,
 				480B727E1CD6A16B00B1CB1F /* profile pic.jpg in Resources */,
@@ -372,7 +393,6 @@
 				480B727C1CD6985A00B1CB1F /* Drawing (1).png in Resources */,
 				4800CC4D1CC4A465002BEBBE /* splat.png in Resources */,
 				4800CC211CC47BF4002BEBBE /* Assets.xcassets in Resources */,
-				4800CC1C1CC47BF4002BEBBE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,11 +468,15 @@
 				480B72611CD600A600B1CB1F /* Player.m in Sources */,
 				480B72601CD600A600B1CB1F /* Player+CoreDataProperties.m in Sources */,
 				481401A61CC742EE00F7671A /* ScoreboardViewController.m in Sources */,
+				483EA7C71CDF1F8D008B19F8 /* SettingsViewController.m in Sources */,
 				481401A31CC73A0F00F7671A /* WelcomeViewController.m in Sources */,
 				4800CC191CC47BF4002BEBBE /* ViewController.m in Sources */,
+				483EA7CC1CDF2E88008B19F8 /* SettingsBundle+CoreDataProperties.m in Sources */,
 				4800CC1F1CC47BF4002BEBBE /* Tutorial1_game.xcdatamodeld in Sources */,
+				483EA7D51CDF5E24008B19F8 /* CountDownViewController.m in Sources */,
 				4800CC161CC47BF4002BEBBE /* AppDelegate.m in Sources */,
 				4800CC131CC47BF4002BEBBE /* main.m in Sources */,
+				483EA7CD1CDF2E88008B19F8 /* SettingsBundle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,14 +512,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4800CC1A1CC47BF4002BEBBE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4800CC1B1CC47BF4002BEBBE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4800CC221CC47BF4002BEBBE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

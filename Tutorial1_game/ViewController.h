@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Player.h"
+#import "SettingsBundle.h"
+
 @interface ViewController : UIViewController {
     
     NSMutableArray * buttons;
@@ -17,11 +19,12 @@
     //used for physics engine
     UIDynamicAnimator* _animator;
     UICollisionBehavior* _collision;
-    
+    UIGravityBehavior *_gravity;
     IBOutlet UIScreenEdgePanGestureRecognizer *pauseGuesture;
     IBOutlet UILabel * scoreLabel;
     IBOutlet UILabel * timeLabel;
-    int time;
+    NSInteger time;
+    NSInteger startTime;
     NSTimer * moveTimer;
     NSTimer * countdownTimer;
     int score;
@@ -37,8 +40,9 @@
     
 }
 @property Player* player;
+@property SettingsBundle *settings;
+
 -(IBAction)pause:(id)sender;
--(BOOL)isButtonOverlapping:(NSArray *)array button:(UIButton *)btn; 
 - (UIButton *)createNewButton;
 - (void)timerTick;
 - (void)changeBubbleColor; 

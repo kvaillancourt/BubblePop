@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Player.h"
 
 @interface CountDownViewController : UIViewController
+@property Player* player;
+-(void)countDown;
 
 @end

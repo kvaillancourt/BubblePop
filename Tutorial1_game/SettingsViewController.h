@@ -6,8 +6,9 @@
 //  Copyright © 2016 vaillancourt.kara.com. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <UIKit/UIKit.h>
 
-@interface SettingsViewController : NSViewController
+
+@interface SettingsViewController : UIViewController
 
 @end

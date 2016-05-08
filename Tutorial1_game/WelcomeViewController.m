@@ -11,7 +11,10 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 
-@interface WelcomeViewController ()
+@interface WelcomeViewController () {
+    NSManagedObjectContext *context;
+    NSArray *previousPlayers;
+}
 
 @end
 
@@ -19,6 +22,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    AppDelegate *ad = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    context = ad.managedObjectContext;
+    
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Player"];
+    previousPlayers = [context executeFetchRequest:request error:nil];
+    if ([previousPlayers lastObject]) {
+        Player *player = [previousPlayers lastObject];
+        
+        nameField.text = [player name];
+    }
+
+    
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,9 +45,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)enditingEnded{
+    [self.view endEditing:YES];
+
+}
 - (IBAction)buttonClick:(id)sender {
     if ([nameField.text length] > 0) {
-        [self performSegueWithIdentifier:@"ShowGameScreen" sender:self];
+        [self performSegueWithIdentifier:@"showCountDown" sender:self];
     }
     else {
         
@@ -64,37 +87,34 @@
 */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-  \
-    
-    if ( [segue.identifier isEqualToString:@"ShowGameScreen"]){
-        AppDelegate *ad = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-        NSManagedObjectContext *context = ad.managedObjectContext;
-        Player *player = [NSEntityDescription insertNewObjectForEntityForName:@"Player" inManagedObjectContext:context];
-        player.name=nameField.text;
-        
-        ViewController *c = (ViewController *)[segue destinationViewController];
-        //    c.player=player;
-        [c setPlayer:player];
-        
-    }
-//    else {
-////        NSLog(@"Scoreboard was tapped");
-//    }
+    Player *player;
 
     
-    //todo: force user to enter in valid name
-    
-    
-    if(UIAccessibilityIsVoiceOverRunning())
-    {
+    if ( [segue.identifier isEqualToString:@"showCountDown"]){
+              for (Player * tempPlayer in previousPlayers) {
+            if ([[tempPlayer name] isEqualToString:nameField.text]) {
+                player = tempPlayer;
+                break;
+            }
+        }
+   
+        if (!player) {
+            player = [NSEntityDescription insertNewObjectForEntityForName:@"Player" inManagedObjectContext:context];
+            player.name=nameField.text;
+
+        }
+            
+        ViewController *controller = (ViewController *)[segue destinationViewController];
+        [controller setPlayer:player]; 
+        //[controller setPlayer:player];
         
     }
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    
+
 
     
     // access the instance of viewController here
-}
+    
 
+}
 @end
+
