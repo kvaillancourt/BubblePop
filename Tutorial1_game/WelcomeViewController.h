@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import <MagicalRecord/MagicalRecord.h>
 #import "Player.h"
 //@class Player;
 

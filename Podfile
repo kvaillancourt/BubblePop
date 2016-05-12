@@ -4,7 +4,6 @@
 # use_frameworks!
 
 target 'Tutorial1_game' do
-pod "MagicalRecord"
 
 
 end

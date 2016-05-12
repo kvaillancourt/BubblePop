@@ -91,12 +91,12 @@
 
     
     if ( [segue.identifier isEqualToString:@"showCountDown"]){
-              for (Player * tempPlayer in previousPlayers) {
-            if ([[tempPlayer name] isEqualToString:nameField.text]) {
-                player = tempPlayer;
-                break;
-            }
-        }
+//        for (Player * tempPlayer in previousPlayers) {
+//            if ([[tempPlayer name] isEqualToString:nameField.text]) {
+//                player = tempPlayer;
+//                break;
+//            }
+//        }
    
         if (!player) {
             player = [NSEntityDescription insertNewObjectForEntityForName:@"Player" inManagedObjectContext:context];

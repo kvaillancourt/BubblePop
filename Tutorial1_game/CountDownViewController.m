@@ -49,8 +49,8 @@
         textLabel.text = [NSString stringWithFormat:@"Get set!"];
     } else if (time == 1) {
         textLabel.text = [NSString stringWithFormat:@"Go!"];
+    } else if (time == 0) {
         [self performSegueWithIdentifier:@"transistionGameScreen" sender:self];
-
     }
     
     time--;

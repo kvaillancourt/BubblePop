@@ -38,12 +38,16 @@
 		481401A61CC742EE00F7671A /* ScoreboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481401A51CC742EE00F7671A /* ScoreboardViewController.m */; };
 		4829771C1CD4309B00B901BF /* bg~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4829771B1CD4309B00B901BF /* bg~iphone.png */; };
 		482B99B51CD4C82E00B47BEF /* Black-iphone-6-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 482B99B41CD4C82E00B47BEF /* Black-iphone-6-background.jpg */; };
+		483C23761CE07EEB00BEC12C /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 483C23751CE07EEB00BEC12C /* Color.m */; };
+		483C23791CE41B6D00BEC12C /* Bubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 483C23781CE41B6D00BEC12C /* Bubble.m */; };
+		483C237C1CE4275B00BEC12C /* GameBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 483C237B1CE4275B00BEC12C /* GameBoardView.m */; };
+		483C237F1CE4279200BEC12C /* GameBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 483C237E1CE4279200BEC12C /* GameBoard.m */; };
 		483EA7C71CDF1F8D008B19F8 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483EA7C61CDF1F8D008B19F8 /* SettingsViewController.m */; };
 		483EA7CC1CDF2E88008B19F8 /* SettingsBundle+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 483EA7C91CDF2E88008B19F8 /* SettingsBundle+CoreDataProperties.m */; };
 		483EA7CD1CDF2E88008B19F8 /* SettingsBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 483EA7CB1CDF2E88008B19F8 /* SettingsBundle.m */; };
 		483EA7D21CDF5A16008B19F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483EA7D11CDF5A16008B19F8 /* Main.storyboard */; };
 		483EA7D51CDF5E24008B19F8 /* CountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483EA7D41CDF5E24008B19F8 /* CountDownViewController.m */; };
-		E69EEB0FB36803C290FA9C31 /* libPods-Tutorial1_game.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFF178333C725DCA7C8EE89 /* libPods-Tutorial1_game.a */; };
+		6045C8AA1CE0508F00B3B2BF /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6045C8A91CE0508F00B3B2BF /* BubbleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +68,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1AFF178333C725DCA7C8EE89 /* libPods-Tutorial1_game.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tutorial1_game.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4800CC0E1CC47BF3002BEBBE /* Tutorial1_game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutorial1_game.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4800CC121CC47BF3002BEBBE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4800CC141CC47BF4002BEBBE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -108,6 +111,14 @@
 		481401A51CC742EE00F7671A /* ScoreboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreboardViewController.m; sourceTree = "<group>"; };
 		4829771B1CD4309B00B901BF /* bg~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg~iphone.png"; sourceTree = "<group>"; };
 		482B99B41CD4C82E00B47BEF /* Black-iphone-6-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Black-iphone-6-background.jpg"; sourceTree = "<group>"; };
+		483C23741CE07EEB00BEC12C /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		483C23751CE07EEB00BEC12C /* Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
+		483C23771CE41B6D00BEC12C /* Bubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bubble.h; sourceTree = "<group>"; };
+		483C23781CE41B6D00BEC12C /* Bubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bubble.m; sourceTree = "<group>"; };
+		483C237A1CE4275B00BEC12C /* GameBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameBoardView.h; sourceTree = "<group>"; };
+		483C237B1CE4275B00BEC12C /* GameBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBoardView.m; sourceTree = "<group>"; };
+		483C237D1CE4279200BEC12C /* GameBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameBoard.h; sourceTree = "<group>"; };
+		483C237E1CE4279200BEC12C /* GameBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBoard.m; sourceTree = "<group>"; };
 		483EA7C51CDF1F8D008B19F8 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		483EA7C61CDF1F8D008B19F8 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		483EA7C81CDF2E88008B19F8 /* SettingsBundle+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SettingsBundle+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -117,8 +128,8 @@
 		483EA7D11CDF5A16008B19F8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		483EA7D31CDF5E24008B19F8 /* CountDownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownViewController.h; sourceTree = "<group>"; };
 		483EA7D41CDF5E24008B19F8 /* CountDownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownViewController.m; sourceTree = "<group>"; };
-		C06D0D5AD8FDDF9DF3717436 /* Pods-Tutorial1_game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutorial1_game.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tutorial1_game/Pods-Tutorial1_game.debug.xcconfig"; sourceTree = "<group>"; };
-		D70AD35CF6AA97BDA04592BE /* Pods-Tutorial1_game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutorial1_game.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tutorial1_game/Pods-Tutorial1_game.release.xcconfig"; sourceTree = "<group>"; };
+		6045C8A81CE0508F00B3B2BF /* BubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleView.h; sourceTree = "<group>"; };
+		6045C8A91CE0508F00B3B2BF /* BubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +137,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E69EEB0FB36803C290FA9C31 /* libPods-Tutorial1_game.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,8 +164,6 @@
 				4800CC381CC47BF4002BEBBE /* Tutorial1_gameUITests */,
 				4800CC2D1CC47BF4002BEBBE /* Tutorial1_gameTests */,
 				4800CC0F1CC47BF3002BEBBE /* Products */,
-				720DC284E002834DC2463AC7 /* Pods */,
-				B1B5AF84CA9C906115332642 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -179,11 +187,19 @@
 				4800CC141CC47BF4002BEBBE /* AppDelegate.h */,
 				4800CC151CC47BF4002BEBBE /* AppDelegate.m */,
 				4800CC171CC47BF4002BEBBE /* ViewController.h */,
+				4800CC181CC47BF4002BEBBE /* ViewController.m */,
 				483EA7D31CDF5E24008B19F8 /* CountDownViewController.h */,
 				483EA7D41CDF5E24008B19F8 /* CountDownViewController.m */,
-				4800CC181CC47BF4002BEBBE /* ViewController.m */,
-				481401A51CC742EE00F7671A /* ScoreboardViewController.m */,
+				6045C8A81CE0508F00B3B2BF /* BubbleView.h */,
+				6045C8A91CE0508F00B3B2BF /* BubbleView.m */,
+				483C237A1CE4275B00BEC12C /* GameBoardView.h */,
+				483C237B1CE4275B00BEC12C /* GameBoardView.m */,
+				483C23771CE41B6D00BEC12C /* Bubble.h */,
+				483C23781CE41B6D00BEC12C /* Bubble.m */,
 				481401A41CC742EE00F7671A /* ScoreboardViewController.h */,
+				483C237D1CE4279200BEC12C /* GameBoard.h */,
+				483C237E1CE4279200BEC12C /* GameBoard.m */,
+				481401A51CC742EE00F7671A /* ScoreboardViewController.m */,
 				481401A11CC73A0F00F7671A /* WelcomeViewController.h */,
 				481401A21CC73A0F00F7671A /* WelcomeViewController.m */,
 				483EA7D11CDF5A16008B19F8 /* Main.storyboard */,
@@ -198,6 +214,8 @@
 				480B725F1CD600A600B1CB1F /* Player.m */,
 				483EA7C51CDF1F8D008B19F8 /* SettingsViewController.h */,
 				483EA7C61CDF1F8D008B19F8 /* SettingsViewController.m */,
+				483C23741CE07EEB00BEC12C /* Color.h */,
+				483C23751CE07EEB00BEC12C /* Color.m */,
 			);
 			path = Tutorial1_game;
 			sourceTree = "<group>";
@@ -247,23 +265,6 @@
 			path = Tutorial1_gameUITests;
 			sourceTree = "<group>";
 		};
-		720DC284E002834DC2463AC7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C06D0D5AD8FDDF9DF3717436 /* Pods-Tutorial1_game.debug.xcconfig */,
-				D70AD35CF6AA97BDA04592BE /* Pods-Tutorial1_game.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		B1B5AF84CA9C906115332642 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1AFF178333C725DCA7C8EE89 /* libPods-Tutorial1_game.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -271,12 +272,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4800CC3E1CC47BF4002BEBBE /* Build configuration list for PBXNativeTarget "Tutorial1_game" */;
 			buildPhases = (
-				22F528BDDFCAECB7940E74EB /* Check Pods Manifest.lock */,
 				4800CC0A1CC47BF3002BEBBE /* Sources */,
 				4800CC0B1CC47BF3002BEBBE /* Frameworks */,
 				4800CC0C1CC47BF3002BEBBE /* Resources */,
-				385EBFB9DD7B3D9328471DD9 /* Embed Pods Frameworks */,
-				34F04BE918ED1DCD78879864 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -412,69 +410,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		22F528BDDFCAECB7940E74EB /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		34F04BE918ED1DCD78879864 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tutorial1_game/Pods-Tutorial1_game-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		385EBFB9DD7B3D9328471DD9 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tutorial1_game/Pods-Tutorial1_game-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		4800CC0A1CC47BF3002BEBBE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				480B72611CD600A600B1CB1F /* Player.m in Sources */,
+				483C23761CE07EEB00BEC12C /* Color.m in Sources */,
 				480B72601CD600A600B1CB1F /* Player+CoreDataProperties.m in Sources */,
 				481401A61CC742EE00F7671A /* ScoreboardViewController.m in Sources */,
 				483EA7C71CDF1F8D008B19F8 /* SettingsViewController.m in Sources */,
+				483C237F1CE4279200BEC12C /* GameBoard.m in Sources */,
 				481401A31CC73A0F00F7671A /* WelcomeViewController.m in Sources */,
+				6045C8AA1CE0508F00B3B2BF /* BubbleView.m in Sources */,
+				483C237C1CE4275B00BEC12C /* GameBoardView.m in Sources */,
 				4800CC191CC47BF4002BEBBE /* ViewController.m in Sources */,
 				483EA7CC1CDF2E88008B19F8 /* SettingsBundle+CoreDataProperties.m in Sources */,
 				4800CC1F1CC47BF4002BEBBE /* Tutorial1_game.xcdatamodeld in Sources */,
 				483EA7D51CDF5E24008B19F8 /* CountDownViewController.m in Sources */,
 				4800CC161CC47BF4002BEBBE /* AppDelegate.m in Sources */,
+				483C23791CE41B6D00BEC12C /* Bubble.m in Sources */,
 				4800CC131CC47BF4002BEBBE /* main.m in Sources */,
 				483EA7CD1CDF2E88008B19F8 /* SettingsBundle.m in Sources */,
 			);
@@ -609,12 +564,12 @@
 		};
 		4800CC3F1CC47BF4002BEBBE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C06D0D5AD8FDDF9DF3717436 /* Pods-Tutorial1_game.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Tutorial1_game/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.kvaillancourt.Tutorial1-game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -624,12 +579,12 @@
 		};
 		4800CC401CC47BF4002BEBBE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D70AD35CF6AA97BDA04592BE /* Pods-Tutorial1_game.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Tutorial1_game/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.kvaillancourt.Tutorial1-game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -642,6 +597,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = Tutorial1_gameTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.kvaillancourt.Tutorial1-gameTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -654,6 +610,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = Tutorial1_gameTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.kvaillancourt.Tutorial1-gameTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -665,6 +622,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = Tutorial1_gameUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.kvaillancourt.Tutorial1-gameUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -676,6 +634,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = Tutorial1_gameUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.kvaillancourt.Tutorial1-gameUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";

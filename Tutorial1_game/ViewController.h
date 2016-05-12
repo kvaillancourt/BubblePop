@@ -9,45 +9,65 @@
 #import <UIKit/UIKit.h>
 #import "Player.h"
 #import "SettingsBundle.h"
+#import "BubbleView.h"
+#import "Bubble.h"
+#import "BubbleView.h"
+#import "Color.h"
+@class BubbleView;
 
 @interface ViewController : UIViewController {
     
     NSMutableArray * buttons;
-    NSMutableArray * buttonVelocities;
-    NSMutableArray * buttonLocations;
-
+    
     //used for physics engine
     UIDynamicAnimator* _animator;
     UICollisionBehavior* _collision;
-    UIGravityBehavior *_gravity;
+//    UIGravityBehavior *_gravity;
+
+    
+    //UI elements
     IBOutlet UIScreenEdgePanGestureRecognizer *pauseGuesture;
     IBOutlet UILabel * scoreLabel;
     IBOutlet UILabel * timeLabel;
+    
+    //used for game time management
     NSInteger time;
     NSInteger startTime;
     NSTimer * moveTimer;
     NSTimer * countdownTimer;
-    int score;
-    int numb_bubbles;
-    int bubble_max_speed;
-    UIColor *previous_color;
     
-    UIColor *green;
-    UIColor *blue;
-    UIColor *pink;
-    UIColor *red;
-    //black
+
+    //game engine elements
+    NSInteger score;
+    NSInteger numb_bubbles;
+    NSInteger bubble_max_speed;
+    Color *previous_color;
+    
+    //colors for bubbles
+    Color *green;
+    Color *blue;
+    Color *pink;
+    Color *red;
+    Color *black;
     
 }
+//to keep track of players high scores and settings
 @property Player* player;
 @property SettingsBundle *settings;
 
+//when game is paused
 -(IBAction)pause:(id)sender;
-- (UIButton *)createNewButton;
-- (void)timerTick;
-- (void)changeBubbleColor; 
-- (void)countdownTick;
-- (IBAction)buttonClick:(id)sender;
+//creates new bubble  objects
+-(BubbleView *)createNewButton;
 
+//speeds up physics
+- (void)timerTick;
+//changes bubble colors
+- (void)changeBubbleColor;
+//used to keep track of time remaining
+- (void)countdownTick;
+//adds points and pops bubbles
+- (IBAction)buttonClick:(id)sender;
+-(BOOL)isButtonOverlapping:(NSArray *)array button:(BubbleView *)btn;
 @end
 

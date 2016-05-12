@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #define MR_SHORTHAND
-#import <MagicalRecord/MagicalRecord.h>
 @interface AppDelegate ()
 
 @end

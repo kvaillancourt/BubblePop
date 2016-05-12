@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -240,7 +239,7 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l0C-6X-0Mh">
                                 <rect key="frame" x="276" y="353" width="51" height="31"/>
                             </switch>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="1" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="j0w-yj-yat">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="5" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="j0w-yj-yat">
                                 <rect key="frame" x="162" y="255" width="276" height="31"/>
                             </slider>
                         </subviews>
@@ -287,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QmJ-jj-oar" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="179" y="-920"/>
+            <point key="canvasLocation" x="131" y="-1032"/>
         </scene>
         <!--Scoreboard View Controller-->
         <scene sceneID="36g-qJ-Fq2">
@@ -319,9 +318,6 @@
                                     <constraint firstAttribute="height" constant="25" id="zRr-d6-zuE"/>
                                 </constraints>
                                 <state key="normal" title="Main"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="27" y="20" width="33" height="30"/>
-                                </variation>
                                 <connections>
                                     <segue destination="8H1-uV-6d9" kind="show" id="Vp3-wD-aoO"/>
                                 </connections>
@@ -427,7 +423,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0    " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZY-py-qF1">
-                                <rect key="frame" x="20" y="543" width="84" height="37"/>
+                                <rect key="frame" x="20" y="543" width="124" height="37"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
@@ -453,7 +449,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="tok-uB-q7u" firstAttribute="trailing" secondItem="WZY-py-qF1" secondAttribute="trailing" id="277-ma-fAC"/>
+                            <constraint firstItem="tok-uB-q7u" firstAttribute="trailing" secondItem="WZY-py-qF1" secondAttribute="trailing" constant="-40" id="277-ma-fAC"/>
                             <constraint firstAttribute="bottom" secondItem="WZY-py-qF1" secondAttribute="bottom" constant="20" symbolic="YES" id="2wV-z9-275"/>
                             <constraint firstAttribute="bottom" secondItem="WZY-py-qF1" secondAttribute="bottom" constant="20" symbolic="YES" id="8us-F7-v8d"/>
                             <constraint firstItem="tok-uB-q7u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Dr3-hf-REW"/>
@@ -517,18 +513,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Ready!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrU-JO-Yf8">
-                                <rect key="frame" x="258" y="163.5" width="84.5" height="20.5"/>
+                                <rect key="frame" x="258" y="164" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENS-tD-w23">
-                                <rect key="frame" x="211" y="215" width="178" height="169"/>
+                                <rect key="frame" x="211" y="203" width="178" height="194"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="178" id="JGj-To-PpO"/>
                                     <constraint firstAttribute="width" constant="148" id="O2r-st-bjt"/>
-                                    <constraint firstAttribute="width" constant="178" id="kkc-NT-Wsx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="150"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -545,23 +541,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fhe-8C-eY2" firstAttribute="top" secondItem="ENS-tD-w23" secondAttribute="bottom" constant="216" id="Bmc-M1-LcU"/>
-                            <constraint firstItem="ENS-tD-w23" firstAttribute="centerY" secondItem="3Zz-U7-709" secondAttribute="centerY" id="HGb-d9-vXu"/>
-                            <constraint firstItem="ENS-tD-w23" firstAttribute="top" secondItem="hrU-JO-Yf8" secondAttribute="bottom" constant="31" id="Iva-kx-IBf"/>
+                            <constraint firstItem="ENS-tD-w23" firstAttribute="top" secondItem="hrU-JO-Yf8" secondAttribute="bottom" constant="18" id="GaI-6z-l0e"/>
                             <constraint firstItem="ENS-tD-w23" firstAttribute="top" secondItem="hrU-JO-Yf8" secondAttribute="bottom" constant="25" id="MdF-t8-Soh"/>
                             <constraint firstItem="hrU-JO-Yf8" firstAttribute="centerX" secondItem="ENS-tD-w23" secondAttribute="centerX" id="TyQ-9N-hmz"/>
                             <constraint firstItem="hrU-JO-Yf8" firstAttribute="centerX" secondItem="3Zz-U7-709" secondAttribute="centerX" id="Ygi-Zo-dnj"/>
-                            <constraint firstItem="ENS-tD-w23" firstAttribute="centerX" secondItem="3Zz-U7-709" secondAttribute="centerX" id="aqJ-lK-SNb"/>
                             <constraint firstItem="ENS-tD-w23" firstAttribute="centerY" secondItem="3Zz-U7-709" secondAttribute="centerY" id="bmi-ev-FPX"/>
-                            <constraint firstItem="ENS-tD-w23" firstAttribute="centerX" secondItem="hrU-JO-Yf8" secondAttribute="centerX" id="jVh-OH-cnj"/>
+                            <constraint firstItem="ENS-tD-w23" firstAttribute="centerX" secondItem="hrU-JO-Yf8" secondAttribute="centerX" id="lfb-4G-PYr"/>
+                            <constraint firstItem="fhe-8C-eY2" firstAttribute="top" secondItem="ENS-tD-w23" secondAttribute="bottom" constant="203" id="nEz-BS-Nlm"/>
+                            <constraint firstItem="ENS-tD-w23" firstAttribute="centerY" secondItem="3Zz-U7-709" secondAttribute="centerY" id="pid-6o-KVT"/>
                             <constraint firstItem="fhe-8C-eY2" firstAttribute="top" secondItem="ENS-tD-w23" secondAttribute="bottom" constant="219" id="vnw-pc-uHT"/>
+                            <constraint firstItem="ENS-tD-w23" firstAttribute="centerX" secondItem="3Zz-U7-709" secondAttribute="centerX" id="wn0-cX-LX2"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="TyQ-9N-hmz"/>
-                                <exclude reference="Ygi-Zo-dnj"/>
                                 <exclude reference="MdF-t8-Soh"/>
                                 <exclude reference="bmi-ev-FPX"/>
+                                <exclude reference="TyQ-9N-hmz"/>
+                                <exclude reference="Ygi-Zo-dnj"/>
                                 <exclude reference="vnw-pc-uHT"/>
                             </mask>
                         </variation>
@@ -571,10 +567,10 @@
                                 <include reference="ENS-tD-w23"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="TyQ-9N-hmz"/>
-                                <include reference="Ygi-Zo-dnj"/>
                                 <include reference="MdF-t8-Soh"/>
                                 <include reference="bmi-ev-FPX"/>
+                                <include reference="TyQ-9N-hmz"/>
+                                <include reference="Ygi-Zo-dnj"/>
                                 <include reference="vnw-pc-uHT"/>
                             </mask>
                         </variation>
@@ -594,8 +590,8 @@
         <image name="Drawing (1).png" width="339" height="339"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gUc-GH-XA4"/>
-        <segue reference="of2-Wu-EBp"/>
-        <segue reference="tFx-HQ-fnJ"/>
+        <segue reference="Gv9-JX-iV8"/>
+        <segue reference="ZRH-CT-IDT"/>
+        <segue reference="9Xq-21-sAN"/>
     </inferredMetricsTieBreakers>
 </document>

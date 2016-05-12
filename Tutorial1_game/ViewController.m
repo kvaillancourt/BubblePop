@@ -17,24 +17,23 @@
 @synthesize player;
 @synthesize settings;
 
-- (UIButton *)createNewButton{
-    UIButton * clickMe = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, (int) (750 /(numb_bubbles)), (int)(750 / (numb_bubbles)))];
-    [clickMe addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-    [clickMe setBackgroundImage:[UIImage imageNamed:@"circle.png"] forState:UIControlStateNormal];
-    [clickMe setBackgroundImage:[UIImage imageNamed:@"splat.png"] forState:UIControlStateHighlighted];
+- (BubbleView *)createNewButton{
+
+    BubbleView * bubble = [[BubbleView alloc] initWithSpecifications: numb_bubbles];
     
     
+  
+    [bubble addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:bubble];
+   // [self.view sendSubviewToBack:bubble];
 
-    CGRect buttonFrame = clickMe.frame;
-    int randomX = arc4random() % (int)(self.view.frame.size.width - buttonFrame.size.width);
-    int randomY = arc4random() % (int)(self.view.frame.size.height - buttonFrame.size.height);
+    //this do while loop sometimes goes inifitely.
+    do {
+        [bubble changePosition:self.view.frame];
+    }
+    while ([self isButtonOverlapping:buttons button:bubble]);
+    
 
-
-    buttonFrame.origin.x = randomX;
-    buttonFrame.origin.y = randomY;
-    clickMe.frame = buttonFrame;
-
-    [self.view addSubview:clickMe];
     
     //physics
     UIDynamicItemBehavior *ballBehavior = [[UIDynamicItemBehavior alloc] initWithItems:buttons];
@@ -47,7 +46,7 @@
     [_animator addBehavior:ballBehavior];
     
     
-    UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[clickMe] mode:UIPushBehaviorModeInstantaneous];
+    UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[bubble] mode:UIPushBehaviorModeInstantaneous];
     int is_negative = (arc4random() % 2);
     int other_is_negative = (arc4random() % 2);
     
@@ -72,13 +71,24 @@
     [_animator addBehavior:push];
     [push setActive:YES];
     
-    return clickMe;
+    return bubble;
 
 }
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cavas.jpg"]];
+
+    //clear the screen before beginning
+    for (UIView *view in self.view.subviews)
+    {
+        if ([view isMemberOfClass:[Bubble class]])
+        {
+            [(BubbleView *)view removeFromSuperview];
+        }
+    }
 
     if(UIAccessibilityIsVoiceOverRunning())
     {
@@ -89,7 +99,6 @@
         bubble_max_speed = 2;
     }
     startTime = 60;
-    buttons = [[NSMutableArray alloc] init];
     numb_bubbles = 15;
     
     
@@ -103,24 +112,33 @@
         
     settings = [previousSettings firstObject];
     numb_bubbles = [[settings maxbubbles] integerValue];
+        NSLog(@"%d",numb_bubbles);
     startTime = [[settings maxtime] integerValue];
+        
         if (![[settings movebubble] boolValue]){
             bubble_max_speed = 0;
         }
     }
     time = startTime;
     
+    green = [[Color alloc] initWithSpecifications:[UIColor colorWithRed:0.0f/255.0f green:255.0f/255.0f blue:0.0f/255.0f alpha:1] :5 :@"Green"];
+    blue = [[Color alloc] initWithSpecifications:[UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:204.0f/255.0f alpha:1] :8 :@"Blue"];
+    red = [[Color alloc] initWithSpecifications:[UIColor colorWithRed:255.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:1.0] :1 :@"Red"];
+    pink = [[Color alloc] initWithSpecifications:[UIColor colorWithRed:255.0f/255.0f green:204.0f/255.0f blue:255.0f/255.0f alpha:1] :2 :@"Pink"];
+    black = [[Color alloc] initWithSpecifications:[UIColor blackColor] :10 :@"Black"];
     
-    green = [UIColor colorWithRed:0.0f/255.0f green:255.0f/255.0f blue:0.0f/255.0f alpha:1];
-    blue = [UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:204.0f/255.0f alpha:1];
-    red = [UIColor colorWithRed:255.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:1.0];
-    pink = [UIColor colorWithRed:255.0f/255.0f green:204.0f/255.0f blue:255.0f/255.0f alpha:1];
     
     
     _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-
+    
+    buttons = [[NSMutableArray alloc] init];
+    //make sure array is empty from previous runs
+    [buttons removeAllObjects];
+    
+    
     for (int i = 0; i < numb_bubbles; i++){
         UIButton * button = [self createNewButton];
+
         [buttons addObject:button];
         [button removeFromSuperview];
 
@@ -163,20 +181,29 @@
     
 }
 
--(BOOL) accessibilityPerformMagicTap
-{
+
+-(BOOL)isButtonOverlapping:(NSArray *)array button:(BubbleView *)btn {
+    for (BubbleView *btn_ in [array copy]) {
+        if (btn_ == btn){continue;}
+        if (CGRectIntersectsRect(btn_.frame, btn.frame)) return YES;
+    }
+    return NO;
+}
+
+
+-(BOOL) accessibilityPerformMagicTap {
     [self pauseActions];
     return YES;
 }
 
--(void) pauseActions
-{
+
+-(void) pauseActions {
     [moveTimer invalidate];
     [countdownTimer invalidate];
     
     UIAlertController * alert = [UIAlertController
                                  alertControllerWithTitle:@"Pause"
-                                 message:[NSString stringWithFormat:@"Score: %d", score]
+                                 message:[NSString stringWithFormat:@"Score: %ld", (long)score]
                                  preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* ok = [UIAlertAction
@@ -248,7 +275,7 @@
         
         UIAlertController * alert = [UIAlertController
                                       alertControllerWithTitle:@"Game Over"
-                                      message:[NSString stringWithFormat:@"Score: %d", score]
+                                      message:[NSString stringWithFormat:@"Score: %ld", (long)score]
                                       preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction* ok = [UIAlertAction
@@ -269,7 +296,7 @@
         
     }
     
-    [timeLabel setText:[NSString stringWithFormat:@"Time: %d", time]];
+    [timeLabel setText:[NSString stringWithFormat:@"Time: %ld", (long)time]];
     time --;
     [self changeBubbleColor];
    
@@ -277,7 +304,7 @@
 }
 
 - (void)changeBubbleColor{
-    for (UIButton * clickMe in buttons) {
+    for (BubbleView * clickMe in buttons) {
         bool was_hidden = false;
         bool hide = (bool)(arc4random() % 2);
         if(![clickMe superview]) {
@@ -306,73 +333,28 @@
 
             if (colorNumber < 40){
                 //red
-                [clickMe setTintColor:red]; //UIColor.redColor
-                 clickMe.accessibilityLabel = @"Red Bubble";
-        
-                //Protanopia Color Seen
-                //[clickMe setTintColor:[UIColor colorWithRed:150.0f/255.0f green:135.0f/255.0f blue:38.0f/255.0f alpha:1]];
-                
-                //Deuteranopia Color Seen
-                //[clickMe setTintColor:[UIColor colorWithRed:169.0f/255.0f green:130.0f/255.0f blue:0.0f/255.0f alpha:1]];
-                
-                //Tritanopita Color Seen
-                //[clickMe setTintColor:[UIColor colorWithRed:254.0f/255.0f green:028.0f/255.0f blue:0.0f/255.0f alpha:1]];
+                [clickMe changeColor:red]; //UIColor.redColor
                 
             }
             else if (colorNumber < 70){
                 //pink
-                [clickMe setTintColor:pink];
-                clickMe.accessibilityLabel = @"Pink Bubble";
-                
-                //Protanopia Color Seen
-                //[clickMe setTintColor:[UIColor colorWithRed:207.0f/255.0f green:215.0f/255.0f blue:255.0f/255.0f alpha:1]];
-                
-                //Deuteranopia Color Seen
-                //[clickMe setTintColor:[UIColor colorWithRed:255.0f/255.0f green:216.0f/255.0f blue:253.0f/255.0f alpha:1]];
-                
-                //Tritanopita Color Seen
-                //[clickMe setTintColor:[UIColor colorWithRed:251.0f/255.0f green:209.0f/255.0f blue:225.0f/255.0f alpha:1]];
-                
+                [clickMe changeColor:pink];
+
             }
             else if (colorNumber < 85){
                 //green
-                [clickMe setTintColor:green];
-                clickMe.accessibilityLabel = @"Green Bubble";
-                
-                //Protanopia Color Seen
-                //[clickMe setTintColor:[UIColor colorWithRed:246.0f/255.0f green:220.0f/255.0f blue:0.0f/255.0f alpha:1]];
-                
-                //Deuteranopia Color Seen
-                //[clickMe setTintColor:[UIColor colorWithRed:255.0f/255.0f green:205.0f/255.0f blue:114.0f/255.0f alpha:1]];
-                
-                //Tritanopita Color Seen
-                //[clickMe setTintColor:[UIColor colorWithRed:115.0f/255.0f green:247.0f/255.0f blue:225.0f/255.0f alpha:1]];
+                [clickMe changeColor:green];
                  
             }
             else if (colorNumber < 95){
-                //blue
-                [clickMe setTintColor:blue];
-                 clickMe.accessibilityLabel = @"Blue Bubble";
-                
-                //Protanopia Color Seen
-                //[clickMe setTintColor:[UIColor colorWithRed:0.0f/255.0f green:120.0f/255.0f blue:240.0f/255.0f alpha:1]];
-                
-                //Deuteranopia Color Seen
-                //[clickMe setTintColor:[UIColor colorWithRed:0.0f/255.0f green:118.0f/255.0f blue:190.0f/255.0f alpha:1]];
-                
-                //Tritanopita Color Seen
-                //[clickMe setTintColor:[UIColor colorWithRed:0.0f/255.0f green:127.0f/255.0f blue:133.0f/255.0f alpha:1]];
-                
+                [clickMe changeColor:blue];
+
             }
             else {
-                //black - Same color for Protanopia, Deuteranopia, and Tritanopita
-                [clickMe setTintColor:UIColor.blackColor];
-                clickMe.accessibilityLabel = @"Black Bubble";
-                            }
+                [clickMe changeColor:black];
+            }
             
-            UIImage * image = [clickMe.currentBackgroundImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-            
-            [clickMe setBackgroundImage:image forState:UIControlStateNormal];
+          
         }
     }
         
@@ -381,9 +363,7 @@
 
 - (void)timerTick{
         //move the button
-    for (UIButton * clickMe in buttons) {
-        
-        
+    for (BubbleView * clickMe in buttons) {
         
         UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[clickMe] mode:UIPushBehaviorModeInstantaneous];
 
@@ -419,38 +399,25 @@
     
 }
 
-- (IBAction)buttonClick:(UIButton *)sender{
+- (IBAction)buttonClick:(BubbleView *)sender{
     float bonus = 1;
-    int scoreBefore = score;
+    NSInteger scoreBefore = score;
     
-    if (previous_color == sender.tintColor){
+    if (previous_color.color == sender.bubble.color){
         bonus = 1.5;
     }
-    previous_color = sender.tintColor;
+    previous_color.color = sender.bubble.color;
     
-    if (sender.tintColor == UIColor.blackColor){
-        score += (int)(10*bonus);
-    }   else if (sender.tintColor == blue){
-        //Blue
-        score += (int)(8*bonus);
-    }    else if (sender.tintColor == green){
-        //Green
-        score += (int)(5*bonus);
-    }   else if (sender.tintColor == pink){
-        //Pink
-        score += (int)(2*bonus);
-    }    else if (sender.tintColor == red){
-        //Red
-        score += (int)(1*bonus);
-    }
+    score += (int)(sender.bubble.points *bonus);
+
     
     if( (scoreBefore != score) && (UIAccessibilityIsVoiceOverRunning()))
     {
-        UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, [NSString stringWithFormat:@"Score: %d", score]);
+        UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, [NSString stringWithFormat:@"Score: %ld", (long)score]);
 
     }
     
-    [scoreLabel setText:[NSString stringWithFormat:@"Score: %d", score]];
+    [scoreLabel setText:[NSString stringWithFormat:@"Score: %ld", (long)score]];
     
 
    [sender removeFromSuperview];
