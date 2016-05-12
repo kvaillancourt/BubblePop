@@ -11,6 +11,7 @@
 
 @interface CountDownViewController : UIViewController
 @property Player* player;
+@property (strong, nonatomic) IBOutlet UITextView *hint;
 -(void)countDown;
 
 @end

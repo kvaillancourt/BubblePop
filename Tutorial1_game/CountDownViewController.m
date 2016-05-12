@@ -8,6 +8,7 @@
 
 #import "CountDownViewController.h"
 #import "ViewController.h"
+#import "AppDelegate.h"
 
 @interface CountDownViewController () {
     
@@ -15,19 +16,19 @@
     __weak IBOutlet UILabel *count;
     NSTimer *moveTimer;
     NSInteger time;
+    NSInteger startTime;
 }
 
 @end
 
 @implementation CountDownViewController
-@synthesize player;
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     time = 3;
-    
-    
+    startTime = 60;
+    //create countdown timer
     moveTimer = [NSTimer scheduledTimerWithTimeInterval:1
                                                  target:self
                                                selector:@selector(countDown)
@@ -35,6 +36,19 @@
                                                 repeats:YES];
 
     // Do any additional setup after loading the view.
+    
+    //used to grab previous settings if they have been changed by the user
+    AppDelegate *ad = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = ad.managedObjectContext;
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SettingsBundle"];
+    NSArray *previousSettings = [context executeFetchRequest:request error:nil];
+    
+    if (previousSettings.firstObject){
+        //assign new settings
+        startTime = [[[previousSettings firstObject] maxtime] integerValue];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,9 +59,12 @@
 -(void)countDown {
     count.text = [NSString stringWithFormat:@"%ld", (long)time];
     
+    //set text for users to know what they are doing
     if (time == 2){
         textLabel.text = [NSString stringWithFormat:@"Get set!"];
+        _hint.text = [NSString stringWithFormat:@"Hint: Long press the screen to pause."];
     } else if (time == 1) {
+        _hint.text = [NSString stringWithFormat:@"Hint: You have %d seconds!", startTime];
         textLabel.text = [NSString stringWithFormat:@"Go!"];
     } else if (time == 0) {
         [self performSegueWithIdentifier:@"transistionGameScreen" sender:self];
@@ -65,7 +82,7 @@
     
     
     ViewController *controller = (ViewController *)[segue destinationViewController];
-    [controller setPlayer:player];
+    [controller setPlayer:_player];
     //[controller setPlayer:player];
 }
 

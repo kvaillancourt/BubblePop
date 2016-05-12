@@ -454,16 +454,15 @@
                             <constraint firstAttribute="bottom" secondItem="WZY-py-qF1" secondAttribute="bottom" constant="20" symbolic="YES" id="8us-F7-v8d"/>
                             <constraint firstItem="tok-uB-q7u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Dr3-hf-REW"/>
                             <constraint firstItem="tok-uB-q7u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="EM2-TM-s3a"/>
-                            <constraint firstItem="tok-uB-q7u" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="G2c-Li-OJH"/>
                             <constraint firstItem="tok-uB-q7u" firstAttribute="leading" secondItem="WZY-py-qF1" secondAttribute="leading" id="JIM-Xh-FI8"/>
+                            <constraint firstItem="tok-uB-q7u" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="UiL-h6-IWv"/>
+                            <constraint firstItem="tok-uB-q7u" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="eXY-fq-Zb7"/>
                             <constraint firstItem="tok-uB-q7u" firstAttribute="leading" secondItem="WZY-py-qF1" secondAttribute="leading" id="nIw-nf-GJu"/>
-                            <constraint firstItem="tok-uB-q7u" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="vJj-kV-Hu6"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Dr3-hf-REW"/>
                                 <exclude reference="JIM-Xh-FI8"/>
-                                <exclude reference="vJj-kV-Hu6"/>
                                 <exclude reference="2wV-z9-275"/>
                             </mask>
                         </variation>
@@ -475,16 +474,15 @@
                             <mask key="constraints">
                                 <include reference="Dr3-hf-REW"/>
                                 <include reference="JIM-Xh-FI8"/>
-                                <include reference="vJj-kV-Hu6"/>
                                 <include reference="2wV-z9-275"/>
                             </mask>
                         </variation>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="fKd-8n-49L" appends="YES" id="nvH-R2-3zJ"/>
+                            <outletCollection property="gestureRecognizers" destination="65J-MO-xCf" appends="YES" id="Ktv-Pf-tzs"/>
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="pauseGuesture" destination="fKd-8n-49L" id="eh2-1V-NaG"/>
+                        <outlet property="pauseGesture" destination="65J-MO-xCf" id="kqo-IU-hdQ"/>
                         <outlet property="scoreLabel" destination="WZY-py-qF1" id="Bdq-uj-iGv"/>
                         <outlet property="timeLabel" destination="tok-uB-q7u" id="ikY-aO-epp"/>
                         <segue destination="mbK-hU-ZDp" kind="show" identifier="ShowScoreboard" id="9Xq-21-sAN"/>
@@ -492,9 +490,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="fKd-8n-49L">
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="65J-MO-xCf">
                     <connections>
-                        <action selector="pause:" destination="BYZ-38-t0r" id="46d-TK-LdB"/>
+                        <action selector="pause:" destination="BYZ-38-t0r" id="GtA-h8-aqG"/>
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
@@ -538,12 +536,28 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mqk-yJ-Zzc">
+                                <rect key="frame" x="170" y="447" width="260" height="133"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="oZd-pB-o1h"/>
+                                </constraints>
+                                <string key="text">Hint: Pop the bubbles to earn points!Red: 1
+Pink: 2
+Green: 5
+Blue: 8 Black: 10</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ENS-tD-w23" firstAttribute="top" secondItem="hrU-JO-Yf8" secondAttribute="bottom" constant="18" id="GaI-6z-l0e"/>
+                            <constraint firstItem="mqk-yJ-Zzc" firstAttribute="centerX" secondItem="ENS-tD-w23" secondAttribute="centerX" id="KeK-Gk-mX8"/>
+                            <constraint firstItem="mqk-yJ-Zzc" firstAttribute="top" secondItem="ENS-tD-w23" secondAttribute="bottom" constant="50" id="Llu-gl-uLl"/>
                             <constraint firstItem="ENS-tD-w23" firstAttribute="top" secondItem="hrU-JO-Yf8" secondAttribute="bottom" constant="25" id="MdF-t8-Soh"/>
                             <constraint firstItem="hrU-JO-Yf8" firstAttribute="centerX" secondItem="ENS-tD-w23" secondAttribute="centerX" id="TyQ-9N-hmz"/>
+                            <constraint firstAttribute="bottom" secondItem="mqk-yJ-Zzc" secondAttribute="bottom" constant="20" symbolic="YES" id="VpU-IH-YQg"/>
                             <constraint firstItem="hrU-JO-Yf8" firstAttribute="centerX" secondItem="3Zz-U7-709" secondAttribute="centerX" id="Ygi-Zo-dnj"/>
                             <constraint firstItem="ENS-tD-w23" firstAttribute="centerY" secondItem="3Zz-U7-709" secondAttribute="centerY" id="bmi-ev-FPX"/>
                             <constraint firstItem="ENS-tD-w23" firstAttribute="centerX" secondItem="hrU-JO-Yf8" secondAttribute="centerX" id="lfb-4G-PYr"/>
@@ -577,6 +591,7 @@
                     </view>
                     <connections>
                         <outlet property="count" destination="ENS-tD-w23" id="Fz4-ga-IUP"/>
+                        <outlet property="hint" destination="mqk-yJ-Zzc" id="eX0-w9-2l0"/>
                         <outlet property="textLabel" destination="hrU-JO-Yf8" id="0e7-jm-Yu8"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="transistionGameScreen" id="Gv9-JX-iV8"/>
                     </connections>

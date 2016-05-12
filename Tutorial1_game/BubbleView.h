@@ -10,6 +10,7 @@
 #import "ViewController.h" 
 #import "Color.h"
 #import "Bubble.h"
+@class BubbleView; 
 
 @interface BubbleView : UIButton
 -(id)initWithSpecifications:(NSInteger)numbBubbles;

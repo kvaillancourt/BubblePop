@@ -13,23 +13,28 @@
 #import "Bubble.h"
 #import "BubbleView.h"
 #import "Color.h"
+#import "GameBoardView.h"
+@class GameBoardView;
 @class BubbleView;
 
 @interface ViewController : UIViewController {
     
+//   GameBoardView *gameBoardView;
+    IBOutlet GameBoardView *gameBoardView;
+//    __weak IBOutlet GameBoardView *gameBoardView;
     NSMutableArray * buttons;
     
     //used for physics engine
     UIDynamicAnimator* _animator;
     UICollisionBehavior* _collision;
-//    UIGravityBehavior *_gravity;
+    UIGravityBehavior *_gravity;
 
     
     //UI elements
-    IBOutlet UIScreenEdgePanGestureRecognizer *pauseGuesture;
     IBOutlet UILabel * scoreLabel;
     IBOutlet UILabel * timeLabel;
-    
+    __weak IBOutlet UILongPressGestureRecognizer *pauseGesture;
+
     //used for game time management
     NSInteger time;
     NSInteger startTime;
@@ -56,10 +61,11 @@
 @property SettingsBundle *settings;
 
 //when game is paused
--(IBAction)pause:(id)sender;
+//-(IBAction)pause:(id)sender;
 //creates new bubble  objects
 -(BubbleView *)createNewButton;
 
+-(void) pauseActions; 
 //speeds up physics
 - (void)timerTick;
 //changes bubble colors

@@ -11,6 +11,9 @@
 
 
 -(id)initWithSpecifications:(NSInteger)numbBubbles {
+    
+    //TODO: make bubble size realitve to number of bubbles and screen size?
+    
     self = [self initWithFrame:CGRectMake(10, 10, 60, 60)];
     
     if (self){
@@ -22,7 +25,17 @@
     return self;
 }
 
-
+- (id)init {
+    self = [self initWithFrame:CGRectMake(10, 10, 60, 60)];
+    
+    if (self){
+        [self setBackgroundImage:[UIImage imageNamed:@"circle.png"] forState:UIControlStateNormal];
+        [self setBackgroundImage:[UIImage imageNamed:@"splat.png"] forState:UIControlStateHighlighted];
+        _bubble = [[Bubble alloc] init];
+        
+    }
+    return self;
+}
 //randomly places the bubble according to the screen size.
 -(void)changePosition:(CGRect)viewFrame {
     

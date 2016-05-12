@@ -72,8 +72,8 @@
 		4800CC121CC47BF3002BEBBE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4800CC141CC47BF4002BEBBE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4800CC151CC47BF4002BEBBE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4800CC171CC47BF4002BEBBE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4800CC181CC47BF4002BEBBE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4800CC171CC47BF4002BEBBE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
+		4800CC181CC47BF4002BEBBE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
 		4800CC1E1CC47BF4002BEBBE /* Tutorial1_game.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tutorial1_game.xcdatamodel; sourceTree = "<group>"; };
 		4800CC201CC47BF4002BEBBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4800CC231CC47BF4002BEBBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -84,52 +84,52 @@
 		4800CC351CC47BF4002BEBBE /* Tutorial1_gameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tutorial1_gameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4800CC391CC47BF4002BEBBE /* Tutorial1_gameUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tutorial1_gameUITests.m; sourceTree = "<group>"; };
 		4800CC3B1CC47BF4002BEBBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4800CC4A1CC4A32F002BEBBE /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
-		4800CC4C1CC4A465002BEBBE /* splat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splat.png; sourceTree = "<group>"; };
-		480B72461CD5C24700B1CB1F /* Grey-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grey-Background.png"; sourceTree = "<group>"; };
-		480B72481CD5C2B300B1CB1F /* wood-iphone6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wood-iphone6.jpg"; sourceTree = "<group>"; };
-		480B724A1CD5C42700B1CB1F /* grey_gradient-6plus.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grey_gradient-6plus.jpeg"; sourceTree = "<group>"; };
-		480B724C1CD5CA6400B1CB1F /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
-		480B724E1CD5CAC900B1CB1F /* grey-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grey-2.jpg"; sourceTree = "<group>"; };
-		480B72501CD5CB6600B1CB1F /* grey3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grey3.jpg; sourceTree = "<group>"; };
-		480B72521CD5CC1F00B1CB1F /* grey7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grey7.jpg; sourceTree = "<group>"; };
-		480B72541CD5CC8600B1CB1F /* cavas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cavas.jpg; sourceTree = "<group>"; };
+		4800CC4A1CC4A32F002BEBBE /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bubble.png; path = ../bubble.png; sourceTree = "<group>"; };
+		4800CC4C1CC4A465002BEBBE /* splat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splat.png; path = ../splat.png; sourceTree = "<group>"; };
+		480B72461CD5C24700B1CB1F /* Grey-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Grey-Background.png"; path = "../Grey-Background.png"; sourceTree = "<group>"; };
+		480B72481CD5C2B300B1CB1F /* wood-iphone6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "wood-iphone6.jpg"; path = "../wood-iphone6.jpg"; sourceTree = "<group>"; };
+		480B724A1CD5C42700B1CB1F /* grey_gradient-6plus.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "grey_gradient-6plus.jpeg"; path = "../grey_gradient-6plus.jpeg"; sourceTree = "<group>"; };
+		480B724C1CD5CA6400B1CB1F /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = circle.png; path = ../circle.png; sourceTree = "<group>"; };
+		480B724E1CD5CAC900B1CB1F /* grey-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "grey-2.jpg"; path = "../grey-2.jpg"; sourceTree = "<group>"; };
+		480B72501CD5CB6600B1CB1F /* grey3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = grey3.jpg; path = ../grey3.jpg; sourceTree = "<group>"; };
+		480B72521CD5CC1F00B1CB1F /* grey7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = grey7.jpg; path = ../grey7.jpg; sourceTree = "<group>"; };
+		480B72541CD5CC8600B1CB1F /* cavas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cavas.jpg; path = ../cavas.jpg; sourceTree = "<group>"; };
 		480B725C1CD600A600B1CB1F /* Player+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Player+CoreDataProperties.h"; sourceTree = "<group>"; };
 		480B725D1CD600A600B1CB1F /* Player+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Player+CoreDataProperties.m"; sourceTree = "<group>"; };
-		480B725E1CD600A600B1CB1F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
-		480B725F1CD600A600B1CB1F /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
-		480B726E1CD6418E00B1CB1F /* darkwoodbg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = darkwoodbg.jpg; sourceTree = "<group>"; };
-		480B72701CD6547C00B1CB1F /* Finish.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Finish.PNG; sourceTree = "<group>"; };
-		480B72721CD6548500B1CB1F /* Pause.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pause.PNG; sourceTree = "<group>"; };
-		480B72741CD6548A00B1CB1F /* Select.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Select.PNG; sourceTree = "<group>"; };
-		480B72761CD654C000B1CB1F /* Balls.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Balls.PNG; sourceTree = "<group>"; };
-		480B727B1CD6985A00B1CB1F /* Drawing (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Drawing (1).png"; sourceTree = "<group>"; };
-		480B727D1CD6A16B00B1CB1F /* profile pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "profile pic.jpg"; sourceTree = "<group>"; };
-		481401A11CC73A0F00F7671A /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
-		481401A21CC73A0F00F7671A /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
-		481401A41CC742EE00F7671A /* ScoreboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreboardViewController.h; sourceTree = "<group>"; };
-		481401A51CC742EE00F7671A /* ScoreboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreboardViewController.m; sourceTree = "<group>"; };
-		4829771B1CD4309B00B901BF /* bg~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg~iphone.png"; sourceTree = "<group>"; };
-		482B99B41CD4C82E00B47BEF /* Black-iphone-6-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Black-iphone-6-background.jpg"; sourceTree = "<group>"; };
-		483C23741CE07EEB00BEC12C /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
-		483C23751CE07EEB00BEC12C /* Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
-		483C23771CE41B6D00BEC12C /* Bubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bubble.h; sourceTree = "<group>"; };
-		483C23781CE41B6D00BEC12C /* Bubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bubble.m; sourceTree = "<group>"; };
-		483C237A1CE4275B00BEC12C /* GameBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameBoardView.h; sourceTree = "<group>"; };
-		483C237B1CE4275B00BEC12C /* GameBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBoardView.m; sourceTree = "<group>"; };
-		483C237D1CE4279200BEC12C /* GameBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameBoard.h; sourceTree = "<group>"; };
-		483C237E1CE4279200BEC12C /* GameBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBoard.m; sourceTree = "<group>"; };
-		483EA7C51CDF1F8D008B19F8 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		483EA7C61CDF1F8D008B19F8 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		480B725E1CD600A600B1CB1F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = ../Player.h; sourceTree = "<group>"; };
+		480B725F1CD600A600B1CB1F /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = ../Player.m; sourceTree = "<group>"; };
+		480B726E1CD6418E00B1CB1F /* darkwoodbg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = darkwoodbg.jpg; path = ../darkwoodbg.jpg; sourceTree = "<group>"; };
+		480B72701CD6547C00B1CB1F /* Finish.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Finish.PNG; path = ../Finish.PNG; sourceTree = "<group>"; };
+		480B72721CD6548500B1CB1F /* Pause.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pause.PNG; path = ../Pause.PNG; sourceTree = "<group>"; };
+		480B72741CD6548A00B1CB1F /* Select.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Select.PNG; path = ../Select.PNG; sourceTree = "<group>"; };
+		480B72761CD654C000B1CB1F /* Balls.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Balls.PNG; path = ../Balls.PNG; sourceTree = "<group>"; };
+		480B727B1CD6985A00B1CB1F /* Drawing (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Drawing (1).png"; path = "../Drawing (1).png"; sourceTree = "<group>"; };
+		480B727D1CD6A16B00B1CB1F /* profile pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "profile pic.jpg"; path = "../profile pic.jpg"; sourceTree = "<group>"; };
+		481401A11CC73A0F00F7671A /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WelcomeViewController.h; path = ../WelcomeViewController.h; sourceTree = "<group>"; };
+		481401A21CC73A0F00F7671A /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WelcomeViewController.m; path = ../WelcomeViewController.m; sourceTree = "<group>"; };
+		481401A41CC742EE00F7671A /* ScoreboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreboardViewController.h; path = ../ScoreboardViewController.h; sourceTree = "<group>"; };
+		481401A51CC742EE00F7671A /* ScoreboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScoreboardViewController.m; path = ../ScoreboardViewController.m; sourceTree = "<group>"; };
+		4829771B1CD4309B00B901BF /* bg~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg~iphone.png"; path = "../bg~iphone.png"; sourceTree = "<group>"; };
+		482B99B41CD4C82E00B47BEF /* Black-iphone-6-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Black-iphone-6-background.jpg"; path = "../Black-iphone-6-background.jpg"; sourceTree = "<group>"; };
+		483C23741CE07EEB00BEC12C /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Color.h; path = ../Color.h; sourceTree = "<group>"; };
+		483C23751CE07EEB00BEC12C /* Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Color.m; path = ../Color.m; sourceTree = "<group>"; };
+		483C23771CE41B6D00BEC12C /* Bubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bubble.h; path = ../Bubble.h; sourceTree = "<group>"; };
+		483C23781CE41B6D00BEC12C /* Bubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bubble.m; path = ../Bubble.m; sourceTree = "<group>"; };
+		483C237A1CE4275B00BEC12C /* GameBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameBoardView.h; path = ../GameBoardView.h; sourceTree = "<group>"; };
+		483C237B1CE4275B00BEC12C /* GameBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameBoardView.m; path = ../GameBoardView.m; sourceTree = "<group>"; };
+		483C237D1CE4279200BEC12C /* GameBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameBoard.h; path = ../GameBoard.h; sourceTree = "<group>"; };
+		483C237E1CE4279200BEC12C /* GameBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameBoard.m; path = ../GameBoard.m; sourceTree = "<group>"; };
+		483EA7C51CDF1F8D008B19F8 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = ../SettingsViewController.h; sourceTree = "<group>"; };
+		483EA7C61CDF1F8D008B19F8 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = ../SettingsViewController.m; sourceTree = "<group>"; };
 		483EA7C81CDF2E88008B19F8 /* SettingsBundle+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SettingsBundle+CoreDataProperties.h"; sourceTree = "<group>"; };
 		483EA7C91CDF2E88008B19F8 /* SettingsBundle+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SettingsBundle+CoreDataProperties.m"; sourceTree = "<group>"; };
-		483EA7CA1CDF2E88008B19F8 /* SettingsBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsBundle.h; sourceTree = "<group>"; };
-		483EA7CB1CDF2E88008B19F8 /* SettingsBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsBundle.m; sourceTree = "<group>"; };
+		483EA7CA1CDF2E88008B19F8 /* SettingsBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsBundle.h; path = ../SettingsBundle.h; sourceTree = "<group>"; };
+		483EA7CB1CDF2E88008B19F8 /* SettingsBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsBundle.m; path = ../SettingsBundle.m; sourceTree = "<group>"; };
 		483EA7D11CDF5A16008B19F8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		483EA7D31CDF5E24008B19F8 /* CountDownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownViewController.h; sourceTree = "<group>"; };
-		483EA7D41CDF5E24008B19F8 /* CountDownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownViewController.m; sourceTree = "<group>"; };
-		6045C8A81CE0508F00B3B2BF /* BubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleView.h; sourceTree = "<group>"; };
-		6045C8A91CE0508F00B3B2BF /* BubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleView.m; sourceTree = "<group>"; };
+		483EA7D31CDF5E24008B19F8 /* CountDownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CountDownViewController.h; path = ../CountDownViewController.h; sourceTree = "<group>"; };
+		483EA7D41CDF5E24008B19F8 /* CountDownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CountDownViewController.m; path = ../CountDownViewController.m; sourceTree = "<group>"; };
+		6045C8A81CE0508F00B3B2BF /* BubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BubbleView.h; path = ../BubbleView.h; sourceTree = "<group>"; };
+		6045C8A91CE0508F00B3B2BF /* BubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BubbleView.m; path = ../BubbleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,42 +180,21 @@
 		4800CC101CC47BF3002BEBBE /* Tutorial1_game */ = {
 			isa = PBXGroup;
 			children = (
+				489B43571CE4377C002DEB39 /* Controllers */,
+				489B43581CE4377C002DEB39 /* Models */,
+				489B435C1CE4377C002DEB39 /* Views */,
+				4800CC111CC47BF3002BEBBE /* Supporting Files */,
 				483EA7C81CDF2E88008B19F8 /* SettingsBundle+CoreDataProperties.h */,
 				483EA7C91CDF2E88008B19F8 /* SettingsBundle+CoreDataProperties.m */,
-				483EA7CA1CDF2E88008B19F8 /* SettingsBundle.h */,
-				483EA7CB1CDF2E88008B19F8 /* SettingsBundle.m */,
 				4800CC141CC47BF4002BEBBE /* AppDelegate.h */,
 				4800CC151CC47BF4002BEBBE /* AppDelegate.m */,
-				4800CC171CC47BF4002BEBBE /* ViewController.h */,
-				4800CC181CC47BF4002BEBBE /* ViewController.m */,
-				483EA7D31CDF5E24008B19F8 /* CountDownViewController.h */,
-				483EA7D41CDF5E24008B19F8 /* CountDownViewController.m */,
-				6045C8A81CE0508F00B3B2BF /* BubbleView.h */,
-				6045C8A91CE0508F00B3B2BF /* BubbleView.m */,
-				483C237A1CE4275B00BEC12C /* GameBoardView.h */,
-				483C237B1CE4275B00BEC12C /* GameBoardView.m */,
-				483C23771CE41B6D00BEC12C /* Bubble.h */,
-				483C23781CE41B6D00BEC12C /* Bubble.m */,
-				481401A41CC742EE00F7671A /* ScoreboardViewController.h */,
-				483C237D1CE4279200BEC12C /* GameBoard.h */,
-				483C237E1CE4279200BEC12C /* GameBoard.m */,
-				481401A51CC742EE00F7671A /* ScoreboardViewController.m */,
-				481401A11CC73A0F00F7671A /* WelcomeViewController.h */,
-				481401A21CC73A0F00F7671A /* WelcomeViewController.m */,
 				483EA7D11CDF5A16008B19F8 /* Main.storyboard */,
 				4800CC201CC47BF4002BEBBE /* Assets.xcassets */,
 				4800CC221CC47BF4002BEBBE /* LaunchScreen.storyboard */,
 				4800CC251CC47BF4002BEBBE /* Info.plist */,
 				4800CC1D1CC47BF4002BEBBE /* Tutorial1_game.xcdatamodeld */,
-				4800CC111CC47BF3002BEBBE /* Supporting Files */,
 				480B725C1CD600A600B1CB1F /* Player+CoreDataProperties.h */,
 				480B725D1CD600A600B1CB1F /* Player+CoreDataProperties.m */,
-				480B725E1CD600A600B1CB1F /* Player.h */,
-				480B725F1CD600A600B1CB1F /* Player.m */,
-				483EA7C51CDF1F8D008B19F8 /* SettingsViewController.h */,
-				483EA7C61CDF1F8D008B19F8 /* SettingsViewController.m */,
-				483C23741CE07EEB00BEC12C /* Color.h */,
-				483C23751CE07EEB00BEC12C /* Color.m */,
 			);
 			path = Tutorial1_game;
 			sourceTree = "<group>";
@@ -223,25 +202,7 @@
 		4800CC111CC47BF3002BEBBE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				480B727D1CD6A16B00B1CB1F /* profile pic.jpg */,
-				480B727B1CD6985A00B1CB1F /* Drawing (1).png */,
-				480B726E1CD6418E00B1CB1F /* darkwoodbg.jpg */,
-				480B72541CD5CC8600B1CB1F /* cavas.jpg */,
-				480B72721CD6548500B1CB1F /* Pause.PNG */,
-				480B724E1CD5CAC900B1CB1F /* grey-2.jpg */,
-				480B72761CD654C000B1CB1F /* Balls.PNG */,
-				480B72701CD6547C00B1CB1F /* Finish.PNG */,
-				480B72501CD5CB6600B1CB1F /* grey3.jpg */,
-				480B724A1CD5C42700B1CB1F /* grey_gradient-6plus.jpeg */,
-				480B72481CD5C2B300B1CB1F /* wood-iphone6.jpg */,
-				480B72521CD5CC1F00B1CB1F /* grey7.jpg */,
-				480B72461CD5C24700B1CB1F /* Grey-Background.png */,
-				480B72741CD6548A00B1CB1F /* Select.PNG */,
-				482B99B41CD4C82E00B47BEF /* Black-iphone-6-background.jpg */,
-				4829771B1CD4309B00B901BF /* bg~iphone.png */,
-				4800CC4C1CC4A465002BEBBE /* splat.png */,
-				480B724C1CD5CA6400B1CB1F /* circle.png */,
-				4800CC4A1CC4A32F002BEBBE /* bubble.png */,
+				489B43591CE4377C002DEB39 /* Pictures */,
 				4800CC121CC47BF3002BEBBE /* main.m */,
 			);
 			name = "Supporting Files";
@@ -263,6 +224,77 @@
 				4800CC3B1CC47BF4002BEBBE /* Info.plist */,
 			);
 			path = Tutorial1_gameUITests;
+			sourceTree = "<group>";
+		};
+		489B43571CE4377C002DEB39 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				481401A41CC742EE00F7671A /* ScoreboardViewController.h */,
+				481401A51CC742EE00F7671A /* ScoreboardViewController.m */,
+				481401A11CC73A0F00F7671A /* WelcomeViewController.h */,
+				481401A21CC73A0F00F7671A /* WelcomeViewController.m */,
+				4800CC171CC47BF4002BEBBE /* ViewController.h */,
+				4800CC181CC47BF4002BEBBE /* ViewController.m */,
+				483EA7D31CDF5E24008B19F8 /* CountDownViewController.h */,
+				483EA7D41CDF5E24008B19F8 /* CountDownViewController.m */,
+				483EA7C51CDF1F8D008B19F8 /* SettingsViewController.h */,
+				483EA7C61CDF1F8D008B19F8 /* SettingsViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		489B43581CE4377C002DEB39 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				483EA7CA1CDF2E88008B19F8 /* SettingsBundle.h */,
+				483EA7CB1CDF2E88008B19F8 /* SettingsBundle.m */,
+				483C23771CE41B6D00BEC12C /* Bubble.h */,
+				483C23781CE41B6D00BEC12C /* Bubble.m */,
+				483C237D1CE4279200BEC12C /* GameBoard.h */,
+				483C237E1CE4279200BEC12C /* GameBoard.m */,
+				480B725E1CD600A600B1CB1F /* Player.h */,
+				480B725F1CD600A600B1CB1F /* Player.m */,
+				483C23741CE07EEB00BEC12C /* Color.h */,
+				483C23751CE07EEB00BEC12C /* Color.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		489B43591CE4377C002DEB39 /* Pictures */ = {
+			isa = PBXGroup;
+			children = (
+				480B727D1CD6A16B00B1CB1F /* profile pic.jpg */,
+				480B727B1CD6985A00B1CB1F /* Drawing (1).png */,
+				480B726E1CD6418E00B1CB1F /* darkwoodbg.jpg */,
+				480B72541CD5CC8600B1CB1F /* cavas.jpg */,
+				480B72721CD6548500B1CB1F /* Pause.PNG */,
+				480B724E1CD5CAC900B1CB1F /* grey-2.jpg */,
+				480B72761CD654C000B1CB1F /* Balls.PNG */,
+				480B72701CD6547C00B1CB1F /* Finish.PNG */,
+				480B72501CD5CB6600B1CB1F /* grey3.jpg */,
+				480B724A1CD5C42700B1CB1F /* grey_gradient-6plus.jpeg */,
+				480B72481CD5C2B300B1CB1F /* wood-iphone6.jpg */,
+				480B72521CD5CC1F00B1CB1F /* grey7.jpg */,
+				480B72461CD5C24700B1CB1F /* Grey-Background.png */,
+				480B72741CD6548A00B1CB1F /* Select.PNG */,
+				482B99B41CD4C82E00B47BEF /* Black-iphone-6-background.jpg */,
+				4829771B1CD4309B00B901BF /* bg~iphone.png */,
+				4800CC4C1CC4A465002BEBBE /* splat.png */,
+				480B724C1CD5CA6400B1CB1F /* circle.png */,
+				4800CC4A1CC4A32F002BEBBE /* bubble.png */,
+			);
+			path = Pictures;
+			sourceTree = "<group>";
+		};
+		489B435C1CE4377C002DEB39 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6045C8A81CE0508F00B3B2BF /* BubbleView.h */,
+				6045C8A91CE0508F00B3B2BF /* BubbleView.m */,
+				483C237A1CE4275B00BEC12C /* GameBoardView.h */,
+				483C237B1CE4275B00BEC12C /* GameBoardView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

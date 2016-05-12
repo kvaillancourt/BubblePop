@@ -9,32 +9,29 @@
 #import "Color.h"
 
 @implementation Color
-@synthesize name;
-@synthesize color;
-@synthesize points;
 
 
 -(id)initWithSpecifications:(UIColor *)initColor :(NSInteger)initPoints :(NSString *)initName {
     self = [self init];
     if (self) {
-        color = initColor;
-        name = initName;
-        points = initPoints;
+        _color = initColor;
+        _name = initName;
+        _points = initPoints;
         
     }
     return self;
 }
 
 -(UIColor *)getColor {
-    return color;
+    return _color;
     
 }
 -(NSInteger)getPoints {
-    return points;
+    return _points;
     
 }
 -(NSString *)getName {
-    return name; 
+    return _name;
 }
 -(BOOL) isEqual:(id)otherColor {
     if (otherColor == self)
@@ -48,6 +45,6 @@
     if (self == otherColor)
         return YES;
     
-    return color == otherColor.color;
+    return _color == otherColor.color && _points == otherColor.points && [_name isEqualToString:otherColor.name];
 }
 @end
